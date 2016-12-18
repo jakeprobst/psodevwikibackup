@@ -1,0 +1,172 @@
+====== N REL File Format ======
+
+This sub-format describes geometrical data used to render environments. The data offsets can be found in the main block at main_block_offset. One file describes one area such as forest 1.
+
+A right-handed coordinate system is used as in OpenGL where x goes from left to right, y goes from down to up and z goes in the opposite direction of the camera’s direction.
+
+The geometry is subdivided into a variable amount of sections. For PSO environment models, sections tend to correspond to area sections or rooms. E.g. the lava room in cave 1 is a section.
+
+Each section has a set of simple and animated geometry. Both simple and animated geometry sets have a set of opaque triangle strips and a set of transparent triangle strips. So a section has a total of 4 sets of triangle strips. Both the number of triangle strips and their length is variable.
+
+Special thanks to Schthack for figuring most of this format out. See his [[:format:n_rel:schthack_notes|original notes]].
+
+FIXME figure out the details of texturing and animation
+
+===== Main Block =====
+
+Fixed-size structure of 24 bytes, located at main_block_offset.
+
+^Offset^Size^Type^Name^Value|
+|0|8|unknown|unknown|unknown|
+|8|4|u32|section_count (ac)|Amount of sections in the section table|
+|12|4|unknown|unknown|unknown|
+|16|4|u32|section_table_offset|Absolute offset|
+|20|4|u32|texture_name_offset|Absolute offset to a string (encoding?)|
+
+===== Section Table =====
+
+^Offset^Size^Type^Name^Value|
+|0|ac*52|Section Table Entry [ac]|section_table_body| |
+
+===== Section Table Entry =====
+
+Fixed-size structure of 52 bytes.
+
+^Offset^Size^Type^Name^Value|
+|0|4|i32|section_id|Can be -1|
+|4|12|Vector|position|Positions the section in the world|
+|16|4|unknown|unknown|unknown|
+|20|4|u32|y_axis_rotation|Divide by 65536 and multiply by 2 pi to get radials|
+|24|4|u32?|unknown|unknown|
+|28|4|f32?|unknown|unknown|
+|32|4|u32|simple_geometry_offset_table_offset|Absolute offset to the simple geometry offset table|
+|36|4|u32|animated_geometry_offset_table_offset|Absolute offset to the animated geometry offset table|
+|40|4|u32|simple_geometry_offset_count (sgoc)| |
+|44|4|u32|animated_geometry_offset_count (agoc)| |
+|48|4|unknown|unknown|unknown|
+
+FIXME describe the animated geometry
+
+===== Simple Geometry Offset Table =====
+
+^Offset^Size^Type^Name^Value|
+|0|sgoc*16|Simple Geometry Offset Table Entry [sgoc]|simple_geometry_offset_table_body| |
+
+===== Simple Geometry Offset Table Entry =====
+
+Fixed-size structure of 16 bytes.
+
+FIXME figure out the meta-information surrounding all these offsets.
+
+^Offset^Size^Type^Name^Value|
+|0|4|u32|offset| |
+|4|8|unknown|unknown|unknown|
+|12|4|u32|flags| |
+
+^Calculated Value^Calculation^Description|
+|simple_geometry_offset_offset (sgoo)|if ((flags & 0b100) == 0) { \\    sgoo = offset + 4 \\ } else { \\    sgoo = (value at offset) + 4 \\ }|Absolute offset|
+|simple_geometry_offset|The value at sgoo|Absolute offset to a simple geometry structure|
+
+===== Simple Geometry =====
+
+Fixed-size structure of 28 bytes. Represents a set of triangle strips that share vertices.
+
+^Offset^Size^Type^Name^Value|
+|0|4|unknown|unknown|unknown|
+|4|4|u32|vertex_info_table_offset|Absolute offset|
+|8|4|u32|vertex_info_count (vic)| |
+|12|4|u32|triangle_strip_table_offset|Absolute offset to a triangle strip table|
+|16|4|u32|triangle_strip_count (tsc)|Amount of triangle strips in the triangle strip table|
+|20|4|u32|transparent_triangle_strip_table_offset|Absolute offset to a triangle strip table|
+|24|4|u32|transparent_triangle_strip_count (ttsc)|Amount of triangle strips in the transparent triangle strip table|
+
+===== Vertex Info Table =====
+
+^Offset^Size^Type^Name^Value|
+|0|16*vic|Vertex Info Table Entry [vic]|vertex_info_table_body| |
+
+FIXME figure out how multiple vertex info table entries are connected to the triangle strip table.
+
+===== Vertex Info Table Entry =====
+
+Fixed-size structure of 16 bytes.
+
+^Offset^Size^Type^Name^Value|
+|0|4|u32|vertex_type|There are at least 4 different types, exact value unknown|
+|4|4|u32|vertex_table_offset|Absolute offset|
+|8|4|u32|vertex_size (vs)|Byte size of an individual vertex|
+|12|4|u32|vertex_count (vc)| |
+
+===== Vertex Table =====
+
+^Offset^Size^Type^Name^Value|
+|0|vc*vs|Vertex Type X|vertex_table_body| |
+
+===== Vertex Types =====
+
+Vertices can have a size of either 16, 24, 28 or 36 bytes.That means there are at least 4 types of vertices, but possibly more. All vertex types seem to have a position vector at offset 0. If they have a surface normal vector it's right after the position vector at offset 12.
+
+FIXME figure out the different vertex types
+
+==== Vertex Type 1 ====
+
+Fixed-size structure of 16 bytes.
+
+^Offset^Size^Type^Name^Value|
+|0|12|[[:format:rel#vector|Vector]]|position| |
+|12|4|u32|color|Diffuse color, exact format unknown|
+
+==== Vertex Type 2 ====
+
+Fixed-size structure of 24 bytes.
+
+^Offset^Size^Type^Name^Value|
+|0|12|[[:format:rel#vector|Vector]]|position| |
+|12|4|u32|color|Diffuse color, exact format unknown|
+|16|4|f32|texture_u|Texture u coordinate|
+|20|4|f32|texture_v|Texture v coordinate|
+
+==== Vertex Type 3 ====
+
+Fixed-size structure of 28 bytes.
+
+^Offset^Size^Type^Name^Value|
+|0|12|[[:format:rel#vector|Vector]]|position| |
+|12|12|[[:format:rel#vector|Vector]]|normal|Surface normal vector|
+|24|4|u32|color|Diffuse color, exact format unknown|
+
+==== Vertex Type 4 ====
+
+Fixed-size structure of 36 bytes.
+
+^Offset^Size^Type^Name^Value|
+|0|12|[[:format:rel#vector|Vector]]|position| |
+|12|12|[[:format:rel#vector|Vector]]|normal|Surface normal vector|
+|24|4|u32|color|Diffuse color, exact format unknown|
+|28|4|f32|texture_u|Texture u coordinate|
+|32|4|f32|texture_v|Texture v coordinate|
+
+===== Triangle Strip Table =====
+
+Structure pointed to from triangle_strip_table_offset or transparent_triangle_strip_table_offset.
+
+^Offset^Size^Type^Name^Value|
+|0|16*(t)tsc|Triangle Strip Table Entry [(t)tsc]|triangle_strip_table_body| |
+
+===== Triangle Strip Table Entry =====
+
+Fixed-size structure of 16 bytes.
+
+^Offset^Size^Type^Name^Value|
+|0|4|u32|flag_and_texture_id_offset| |
+|4|4|u32|data_type| |
+|8|4|u32|triangle_strip_index_table_offset| |
+|12|4|u32|triangle_strip_index_count (tsic)| |
+
+===== Triangle Strip Index Table =====
+
+^Offset^Size^Type^Name^Value|
+|0|2*tsic|u16[tsic]|triangle_strip_index_table_body|Vertex indices|
+
+\\
+

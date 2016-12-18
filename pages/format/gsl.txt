@@ -1,0 +1,41 @@
+====== GSL Archive Format ======
+
+
+GSL is a 2KiB-block aligned file archive format. It has appeared in all versions of Phantasy Star Online and in Phantasy Star Universe. Unlike [[:format:afs|AFS]], GSL includes a file metadata table in its header.
+
+Archives may be big endian or little endian, but there is no indication as to which -- however there is a heuristic that can detect the endianness of most GSL archives. GSLs found on the Gamecube are big endian, while Blue Burst uses little endian.
+
+===== Overview =====
+
+GSL archives are split in 2KiB (2048-byte) blocks, and a section may only start at the beginning of a block. There is a header section, followed by file sections.
+
+The archive header is simply an array of file headers.
+
+<code c>
+struct fileheader_s {
+    uint8_t filename[32]; // ASCII filename, does not have to be null-terminated
+    uint32_t offset; // offset in blocks
+    uint32_t size; // size in bytes
+    uint8_t _unused[8];
+};
+</code>
+
+The end of the header list is either the first entry in the header blocks that has a filename starting with a null byte, or the first block of a file, whichever comes first.
+
+===== Guessing the endianness =====
+
+The values of ''offset'' and ''size'' will be stored in the endianness of the target client. If you do not know the endianness already, you will have to guess it. A simple algorithm to do so:
+
+  - Get the size of the full archive and divide it by 2048 to get the number of blocks in the file.
+  - When reading the offset and size of a file header, first read them as big endian.
+  - If the offset is greater than the number of blocks, then the archive is little endian instead; restart parsing of the archive from the beginning and read as little endian.
+
+Since this is merely a heuristic, it may fail under certain malformed archives, but it should not fail if the archive is packed reasonably.
+
+===== File contents =====
+
+A file's data starts at its ''offset * 2048'' bytes from the start of the archive and ends at ''offset * 2048 + size''.
+
+===== Format caveats =====
+
+Files have a maximum size of 4 GiB, although the expected storage medium for which the format was created for was CD-ROMs on the SEGA Saturn. With that said, the offset can account for archives up to //8 TiB// in size.

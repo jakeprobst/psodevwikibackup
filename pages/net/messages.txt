@@ -1,0 +1,858 @@
+====== Network Protocol Messages ======
+
+Source: http://www.fuzziqersoftware.com/projects.html
+
+
+PSO sends game data in messages. Each message has a 4-byte (8-byte on Blue Burst) header that specifies the message type and the total size of the message. All multi-byte integers are in little-endian byte order, except in the payload of the B2 message, which is architecture-specific.
+
+
+The binary message formats are described in hexadecimal notation with extra letters to denote variable parts. Two hexadecimal digits constitute a single byte (octet).
+
+A detailed description of how messages flow between client and server can be found [[net:message_flow|here]].
+
+
+===== Header Formats =====
+
+==== GameCube and Dreamcast ====
+
+  CC FF SS SS
+(C = message number, F = flags, S = size)
+
+==== PC ====
+
+  SS SS CC FF
+(C = message number, F = flags, S = size)
+
+==== Blue Burst ====
+
+Blue Burst uses an 8-byte instead of a 4-byte header.
+  SS SS CC CC FF FF FF FF
+(C = message number, F = flags, S = size)
+
+===== Message Layouts =====
+
+FIXME This section needs cleanup.
+
+01 - lobby message box (server->client) (all versions)
+DC/GC: 01 00 SS SS 00 00 00 00 00 00 00 00 <message as text>
+PC:    SS SS 01 00 00 00 00 00 00 00 00 00 <message as Unicode text>
+BB:    SS SS 01 00 00 00 00 00 00 00 00 00 00 00 00 00 <message as Unicode text>
+
+
+02 - initialize encryption (server->client) (DC?, GC)
+02 00 4C 00 44 72 65 61 6D 43 61 73 74 20 4C 6F
+62 62 79 20 53 65 72 76 65 72 2E 20 43 6F 70 79
+72 69 67 68 74 20 53 45 47 41 20 45 6E 74 65 72
+70 72 69 73 65 73 2E 20 31 39 39 39 00 00 00 00
+00 00 00 00 SS SS SS SS CC CC CC CC
+(C = client key, S = server key)
+Note: client will respond with either a 9A, 9D, or 9E command
+
+
+03 - initialize encryption and check license (server->client) (BB)
+C8 00 03 00 00 00 00 00 50 68 61 6E 74 61 73 79
+20 53 74 61 72 20 4F 6E 6C 69 6E 65 20 42 6C 75
+65 20 42 75 72 73 74 20 47 61 6D 65 20 53 65 72
+76 65 72 2E 20 43 6F 70 79 72 69 67 68 74 20 31
+39 39 39 2D 32 30 30 34 20 53 4F 4E 49 43 54 45
+41 4D 2E 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 SS SS SS SS SS SS SS SS
+SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
+SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
+SS SS SS SS SS SS SS SS CC CC CC CC CC CC CC CC
+CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+CC CC CC CC CC CC CC CC
+(C = client key, S = server key)
+Note: client will respond with a 93 command
+
+
+04 - set security data / guild card number (server->client) (DC?, PC, GC)
+PC:
+2C 00 04 00 00 01 00 00 GG GG GG GG SS SS SS SS
+SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
+SS SS SS SS SS SS SS SS SS SS SS SS
+DC/GC:
+04 00 2C 00 00 01 00 00 GG GG GG GG SS SS SS SS
+SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
+SS SS SS SS SS SS SS SS SS SS SS SS
+(G = guild card number, S = security data)
+Note: client will respond with a 96 command only for the first 04 it receives
+
+
+05 - disconnect (client->server) (all versions)
+DC/GC: 05 00 04 00
+PC:    04 00 05 00
+BB:    08 00 05 00 00 00 00 00
+
+
+06 - chat (bidirectional) (all versions)
+DC/GC Client->Server: 06 00 SS SS 00 00 00 00 00 00 00 00 <message>
+DC/GC Server->Client: 06 00 SS SS 00 01 00 00 GG GG GG GG <player name> 09 <message>
+PC Client->Server:    06 00 SS SS 00 00 00 00 00 00 00 00 <message as Unicode>
+PC Server->Client:    06 00 SS SS 00 01 00 00 GG GG GG GG <player name as Unicode> 09 00 <message as Unicode>
+BB Client->Server:    SS SS 06 00 00 00 00 00 00 00 00 00 00 00 00 00 <message as Unicode>
+BB Server->Client:    SS SS 06 00 00 00 00 00 00 01 00 00 GG GG GG GG <player name as Unicode> 09 00 <message as Unicode>
+(G = Guild Card number of player who sent message)
+Note: when a client sends an 06 command, the server broadcasts a chat command to all players in the same game/lobby
+
+
+07 - Ship Select (server->client) (all versions)
+Note: DC format unknown; it's likely to be the same as the GC format
+PC:
+SS SS 07 NN MM MM MM MM XX XX XX XX 04 0F RR RR
+RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+[MM MM MM MM YY YY YY YY 04 0F TT TT TT TT TT TT
+TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+TT TT TT TT TT TT TT TT TT TT TT TT]
+GC:
+07 NN SS SS MM MM MM MM XX XX XX XX 04 0F RR RR
+RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+[MM MM MM MM YY YY YY YY 04 0F TT TT TT TT TT TT
+TT TT TT TT TT TT TT TT TT TT TT TT]
+BB:
+SS SS 07 00 NN 00 00 00 MM MM MM MM XX XX XX XX
+04 00 RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+RR RR RR RR [MM MM MM MM YY YY YY YY 04 00 TT TT
+TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT]
+(S = size, N = number of items, M = menu ID, X = title ID (unused), R = menu title, Y = item ID, T = item text)
+Note: text in PC and BB (fields R and T) are in Unicode; on GC, they're ANSI
+Note: bracketed section repeats (N) times
+Note: R field becomes ship name when player joins a lobby
+Note: client will respond with either an 09 or 10 command
+
+
+08 - Team Select / Game Select (server->client) (all versions)
+Note: DC format unknown
+PC:
+SS SS 08 NN MM MM MM MM XX XX XX XX 00 00 RR RR
+RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
+TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+TT TT TT TT TT TT TT TT TT TT II JJ]
+GC:
+08 NN SS SS MM MM MM MM XX XX XX XX 00 00 RR RR
+RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
+TT TT TT TT TT TT TT TT TT TT KK JJ]
+BB:
+SS SS 08  00 NN 00 00 00 MM MM MM MM XX XX XX XX
+00 00 RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+RR RR RR RR [MM MM MM MM YY YY YY YY GG HH TT TT
+TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+TT TT TT TT TT TT TT TT TT TT TT TT TT TT II JJ]
+(S = size, N = number of teams, M = menu ID, X = title ID (unused), R = menu title (unused), Y = item ID, G = difficulty (Normal: 22, Hard: 23, V Hard: 24, Ultimate: 25, Ep3 game: 0A), H = number of players, I = episode (Ep1: 40, Ep2: 41, Ep4: 43, Ep3: ignored), J = flags (add together; battle: 10, challenge: 20, locked: 02, disabled (BB): 04), K = GC flags (add together; episode 2: 80, episode 1: 40, challenge: 20, battle: 10, locked: 02))
+Note: text in PC and BB (fields R and T) are in Unicode; on GC, they're ANSI
+Note: bracketed section repeats (N) times
+Note: client will respond with either an 09 or 10 command
+
+
+09 - menu item info (client->server) (all versions)
+DC/GC: 09 00 0C 00 MM MM MM MM II II II II
+PC:    0C 00 09 00 MM MM MM MM II II II II
+BB:    10 00 09 00 00 00 00 00 MM MM MM MM II II II II
+(M = menu ID, I = item ID)
+Note: server should respond with an 11 command
+
+
+0C - create game (client->server) (DCv1)
+Note: format unknown
+
+
+10 - select menu item (client->server) (all versions)
+DC/GC: 10 00 0C 00 MM MM MM MM II II II II
+PC:    0C 00 10 00 MM MM MM MM II II II II
+BB:    10 00 10 00 00 00 00 00 MM MM MM MM II II II II
+(M = menu ID, I = item ID)
+
+
+11 - Ship Info (server->client) (all versions)
+DC/GC: 11 7E SS SS 00 F0 FF BF 40 F2 FF BF <message>
+PC:    SS SS 11 7E 00 F0 FF BF 40 F2 FF BF <message as Unicode>
+BB:    SS SS 11 00 00 00 00 00 00 00 00 00 00 00 00 00 <message as Unicode>
+
+
+13 - continue sending quest file (bidirectional) (all versions)
+13 00 18 04 <0x400 byte buffer> SS SS SS SS
+(S = size of data in buffer (Max. 0x400))
+
+
+17 - initialize encryption and check license (server->client) (PC, GC)
+Note: same format as 02 command
+Note: client will respond with a DB command
+
+
+19 - reconnect (server->client) (all versions)
+DC/GC: 19 00 0C 00 II II II II PP PP 00 00
+PC:    0C 00 19 00 II II II II PP PP 00 00
+BB:    10 00 19 00 00 00 00 00 II II II II PP PP 00 00
+(I = IP address, P = port)
+Note: client will disconnect and reconnect to the given IP/port after this command is sent
+
+
+1A - large message box (server->client) (all versions)
+DC/GC: 1A 00 SS SS <message>
+PC:    SS SS 1A 00 <message as unicode>
+BB:    SS SS 1A 00 00 00 00 00 <message as unicode>
+Note: sending this command to a BB client may cause that client to disconnect
+Note: see D6 command for further information
+
+
+1D - ping (bidirectional) (all versions)
+DC/GC: 1D 00 04 00
+PC:    04 00 1D 00
+BB:    08 00 1D 00 00 00 00 00
+Note: client will respond with the exact same command
+
+
+1F - Information menu (bidirectional) (DC?, PC, BB)
+PC client->server: 04 00 1F 00
+Note: same format and usage (server->client) as 07 command
+
+
+21 - GameGuard control (server->client) (BB)
+Note: format and usage unknown
+
+
+22 - GameGuard check (bidirectional) (BB)
+old format: 08 00 22 00 VV VV VV VV
+new format: 18 00 22 00 00 00 00 00 VV VV VV VV VV VV VV VV VV VV VV VV VV VV VV VV
+(V = GameGuard test value)
+Note: client will respond with a command in the same format, but with a different value
+
+
+40 - guild card search (client->server) (all versions)
+DC/GC: 40 00 10 00 00 01 00 00 GG GG GG GG TT TT TT TT
+PC:    10 00 40 00 00 01 00 00 GG GG GG GG TT TT TT TT
+BB:    14 00 40 00 00 00 00 00 00 01 00 00 GG GG GG GG TT TT TT TT
+(G = searcher's guild card number, T = target's guild card number)
+Note: if target is found, server should reply with a 41 command
+Note: if target is not found, server should not reply
+
+
+41 - guild card search result (server->client) (all versions)
+Note: DC and PC formats are unknown
+GC:
+41 00 C4 00 00 01 00 00 GG GG GG GG TT TT TT TT
+00 00 00 00 II II II II PP PP 00 00 LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+MM MM MM MM YY YY YY YY 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00
+BB:
+30 01 41 00 00 00 00 00 00 01 00 00 GG GG GG GG
+TT TT TT TT 10 00 19 00 00 00 00 00 II II II II
+PP PP 00 00 LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL MM MM MM MM
+YY YY YY YY 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+(G = searcher's guild card number, T = target's guild card number, I = IP address of server that target is on, P = port number on that server, L = location text ("teamname,blockname,,servername"), M = menu ID of lobby list on remote server, Y = lobby ID that player is in, N = player's name)
+
+
+44 - begin sending quest file (bidirectional) (all versions)
+DC/GC server->client:
+44 02 3C 00 NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN FF FF FF FF FF FF FF FF
+FF FF FF FF FF FF FF FF SS SS SS SS
+PC server->client:
+44 02 3C 00 NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN FF FF FF FF FF FF FF FF
+FF FF FF FF FF FF FF FF SS SS SS SS
+BB server->client:
+58 00 44 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 FF FF FF FF
+FF FF FF FF FF FF FF FF FF FF FF FF SS SS SS SS
+FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+00 00 00 00 00 00 00 00
+(N = quest name, F = filename (repeated in BB format), S = file size)
+
+
+60 - broadcast command (bidirectional) (all versions)
+DC/GC: 60 00 SS SS <subcommand data>
+PC:    SS SS 60 00 <subcommand data>
+BB:    SS SS 60 00 00 00 00 00 <subcommand data>
+(S = command size)
+Note: when a client sends a 60 command, the server broadcasts the command to all clients in the same lobby/game
+
+
+61 - player info (client->server) (all versions)
+Note: exact structure of player info is too extensive to be included here
+
+
+62 - target command (bidirectional) (all versions)
+DC/GC: 62 PP SS SS <subcommand data>
+PC:    SS SS 62 PP <subcommand data>
+BB:    SS SS 62 PP 00 00 00 00 <subcommand data>
+(S = command size, P = target slot)
+Note: when a client sends a 62 command, the server forwards it to the player in the given slot
+
+
+64 - join game (server->client) (all versions)
+Note: DC format unknown
+PC:
+68 01 64 NN LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL WW WW WW WW WW WW WW WW WW WW WW WW
+WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+WW WW WW WW XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ II MM 00 DD BB EE SS CC RR RR RR RR
+00 01 00 00
+GC:
+64 NN 14 01 LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL WW WW WW WW WW WW WW WW WW WW WW WW
+WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+WW WW WW WW XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ II MM 01 DD BB EE SS CC RR RR RR RR
+TT 01 00 00
+BB:
+A8 01 64 00 NN 00 00 00 LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL LL
+LL LL LL LL LL LL LL LL WW WW WW WW WW WW WW WW
+WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW WW
+WW WW WW WW WW WW WW WW WW WW WW WW XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY YY
+YY YY YY YY ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ
+ZZ ZZ ZZ ZZ ZZ ZZ ZZ ZZ II MM 01 DD BB 00 SS CC
+RR RR RR RR EE 01 00 00
+(N = number of players in game, L = map layout, W/X/Y/Z = player lobby data for players 1/2/3/4 respectively, I = client ID of joining player, M = leader ID, D = difficulty, B = battle mode enabled, E = holiday ID, S = section ID of original creator of game, C = challenge mode enabled, R = random number unique to this game, T = episode (0-2))
+Note: when a player joins a game, the player receives a 64. other players in the game receive a 65 containing the joining player's data. the player data of players already in the game is sent to the joining player via 62/6D commands (which are sent by the existing players).
+
+
+65 - other player joined game (server->client) (all versions)
+Note: same format as 68 command, but used only in games
+
+
+66 - other player left game (server->client) (all versions)
+Note: same format as 69 command, but used only in games
+
+
+67 - join lobby (server->client) (all versions)
+DC/GC: 67 NN SS SS CC LL 01 TT BB BB EE EE 00 00 00 00 <player data sets, 0x43C bytes each>
+PC:    SS SS 67 NN CC LL 01 TT BB BB EE EE 00 00 00 00 <player data sets, 0x44C bytes each>
+BB:    SS SS 67 00 NN 00 00 00 CC LL 01 TT BB BB EE EE 00 00 00 00 <player data sets, 0x520 bytes each>
+(S = size, N - number of players, C = client's ID, L = leader's ID, T = lobby number, B = block number, E = event)
+Note: when a player joins a lobby, the player receives a 67 containing all players' data in the lobby. other players in the lobby receive a 68 containing the joining player's data.
+
+
+68 - other player joined lobby (server->client) (all versions)
+Note: same format as 67 command, but always only one player
+
+
+69 - other player left lobby (server->client) (all versions)
+DC/GC: 69 LL 08 00 LL NN 00 00
+PC:    08 00 69 LL LL NN 00 00
+BB:    0C 00 69 00 LL 00 00 00 LL NN 00 00
+(L = leaving player ID, N = new lobby/game leader ID)
+Note: leaving player ID is repeated for unknown reasons
+
+
+6C - broadcast command (bidirectional) (all versions)
+Note: same format and usage as 60 command
+
+
+6D - target command (bidirectional) (all versions)
+Note: same format and usage as 62 command
+
+
+6F - set game status (client->server) (all versions)
+DC/GC: 6F 00 04 00
+PC:    04 00 6F 00
+BB:    08 00 6F JJ 00 00 00 00
+(J = 0 if game is open, 1 if a quest is in progress and the game should not be joined by anyone else)
+Note: this command tells when the client is done loading into a game, so other players may join
+
+
+81 - simple mail (bidirectional) (all versions)
+Note: format unknown
+
+
+83 - lobby list (server->client) (all versions)
+DC/GC: 83 NN SS SS [MM MM MM MM YY YY YY YY 00 00 00 00]
+PC:    SS SS 83 NN [MM MM MM MM YY YY YY YY 00 00 00 00]
+BB:    SS SS 83 00 NN 00 00 00 [MM MM MM MM YY YY YY YY 00 00 00 00]
+(S = size, N = number of lobbies (should be 15 for every PSO except Ep3, which requires 20), M = menu ID, Y = lobby ID)
+Note: repeat bracketed section for each lobby
+
+
+84 - change lobby (client->server) (all versions)
+Note: same format as 10 command
+
+
+88 - set lobby markers (server->client) (all versions)
+DC/GC: 88 NN SS SS [00 01 00 00 GG GG GG GG CC 00 00 00]
+PC:    SS SS 88 NN [00 01 00 00 GG GG GG GG CC 00 00 00]
+BB:    SS SS 88 00 NN 00 00 00 [00 01 00 00 GG GG GG GG CC 00 00 00]
+(N = number of players, S = size, G = guild card number, C = color)
+Note: repeat data in brackets for each player
+
+
+89 - change lobby marker color (client->server) (all versions)
+DC/GC: 89 CC 04 00
+PC:    04 00 89 CC
+BB:    08 00 89 00 CC 00 00 00
+(C = requested marker color)
+Note: server should reply with an 88 command
+
+
+8A - room name (bidirectional) (all versions)
+DC/GC client->server: 8A 00 04 00
+DC/GC server->client: 8A 00 SS SS <room name>
+PC client->server:    04 00 8A 00
+PC server->client:    SS SS 8A 00 <room name as unicode>
+BB client->server:    08 00 8A 00 00 00 00 00
+BB server->client:    SS SS 8A 00 00 00 00 00 <room name as unicode>
+Note: server should respond to 8A with another 8A command
+
+
+93 - license check / log in (client->server) (BB)
+Note: format not fully known
+
+
+96 - client checksum (client->server) (DC?, PC?, GC)
+GC: 96 00 0C 00 ?? ?? ?? ?? ?? ?? ?? ??
+(? = client checksum)
+
+
+97 - save player data (server->client) (DC, PC, GC)
+DC/GC: 97 01 04 00
+PC:    04 00 97 01
+Note: this client causes the game to save its player data to the hard drive or memory card
+Note: client will *probably* respond with a B1 command
+
+
+98 - leave game (client->server) (all versions)
+Note: same format as 61 command
+Note: client will automatically send an 84 command to choose a lobby to join after sending this command
+
+
+99 - time accepted (client->server) (all versions)
+DC/GC: 99 00 04 00
+PC:    04 00 99 00
+BB:    08 00 99 00 00 00 00 00
+Note: command might not be used on BB
+
+
+9A - log in (bidirectional) (DC, PC, GC)
+DC/GC client->server:
+9A 00 SS SS -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- NN NN NN NN NN NN NN NN 00 00 00 00
+00 00 00 00 AA AA AA AA AA AA AA AA AA AA AA AA
+00 00 00 00 ....
+PC client->server:
+SS SS 9A 00 -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- NN NN NN NN NN NN NN NN 00 00 00 00
+00 00 00 00 AA AA AA AA AA AA AA AA AA AA AA AA
+00 00 00 00 ....
+DC/GC server->client: 9A XX 04 00
+PC server->client:    04 00 9A XX
+(S = size, N = serial number as hex string, A = access key, X = reply code (00/02: license ok))
+Note: server should respond to a 9A command with its own 9A command
+Note: client will respond to a 9A command with either a 9C, 9D or 9E command
+
+
+9C - new user (bidirectional) (DC, PC, GC)
+DC/GC client->server:
+9C 00 SS SS -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- NN NN NN NN NN NN NN NN 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 AA AA AA AA AA AA AA AA AA AA AA AA
+00 00 00 00 ....
+PC client->server:
+SS SS 9C 00 -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- NN NN NN NN NN NN NN NN 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 AA AA AA AA AA AA AA AA AA AA AA AA
+00 00 00 00 ....
+DC/GC server->client: 9C XX 04 00
+PC server->client:    04 00 9C XX
+(S = size, N = serial number as hex string, A = access key, X = reply code (00/01/02: license ok))
+Note: server should respond to a 9C command with its own 9C command
+Note: client will respond to a 9C command with either a 9D or 9E command
+
+
+9D - log in (client->server) (DC, PC, GC)
+Note: same format as 9E command
+
+
+9E - log in (client->server) (DC, PC, GC)
+DC/GC:
+9E 00 SS SS -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- VV -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- NN NN NN NN
+NN NN NN NN 00 00 00 00 00 00 00 00 AA AA AA AA
+AA AA AA AA AA AA AA AA 00 00 00 00 ....
+PC:
+SS SS 9E 00 -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- VV -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+-- -- -- -- -- -- -- -- -- -- -- -- NN NN NN NN
+NN NN NN NN 00 00 00 00 00 00 00 00 AA AA AA AA
+AA AA AA AA AA AA AA AA 00 00 00 00 ....
+(S = size, N = serial number as hex string, A = access key, V = PSO version code)
+Note: server should respond to a 9E command with an 04 command
+
+
+A0 - change ship / ship select (bidirectional) (all versions)
+DC/GC client->server: A0 00 04 00
+PC client->server:    04 00 A0 00
+BB client->server:    08 00 A0 00 00 00 00 00
+Note: server->client format and usage is the same as the 07 command
+Note: when a client sends an A0 command, the server should reply with an A0 or 07 (their functions are the same)
+
+
+A1 - change block / block select (bidirectional) (all versions)
+DC/GC client->server: A1 00 04 00
+PC client->server:    04 00 A1 00
+BB client->server:    08 00 A1 00 00 00 00 00
+Note: server->client format and usage is the same as the 07 command
+Note: when a client sends an A1 command, the server should reply with an 07
+
+
+A2 - quest menu (bidirectional) (all versions)
+DC/GC client->server: A2 TT 04 00
+PC client->server:    04 00 A2 TT
+BB client->server:    08 00 A2 00 TT 00 00 00
+DC/GC server->client:
+A2 NN SS SS [MM MM MM MM YY YY YY YY NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD]
+PC server->client:
+SS SS A2 NN [MM MM MM MM YY YY YY YY NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD]
+BB server->client:
+SS SS A2 00 NN 00 00 00 [MM MM MM MM YY YY YY YY
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD DD
+DD DD DD DD]
+(S = size, N = number of quests, M = menu ID, Y = item ID, N = quest name (unicode for PC and BB), D = short quest description (unicode for PC and BB))
+Note: repeat bracketed segment for each quest entry
+Note: client will respond with either an 09 or 10 command
+
+
+A3 - quest information (server->client) (all versions)
+Note: same format as 1A and D5 commands
+
+
+A4 - download quest menu (server->client) (DC, PC, GC)
+Note: same format and usage as A2 command
+
+
+A6 - begin sending download quest file / GBA game (bidirectional) (DC, PC, GC)
+Note: same format and usage as 44 command
+
+
+A7 - continue sending download quest file / GBA game (bidirectional) (DC, PC, GC)
+note: same format and usage as 13 command
+
+
+A9 - close quest list (client->server) (all versions)
+DC/GC: A9 00 04 00
+PC:    04 00 A9 00
+BB:    08 00 A9 00 00 00 00 00
+Note: some servers use this command to get themselves out of infinite loops; you may be able to simply ignore it depending on how your server is built
+
+
+AC - launch quest (bidirectional) (all versions)
+DC/GC: AC 00 04 00
+PC:    04 00 AC 00
+BB:    08 00 AC 00 00 00 00 00
+Note: clients in a game send AC commands when they're ready to begin a quest; server sends all clients in the game an AC command when they're all ready, and the quest begins
+
+
+B0 - text message (server->client) (all versions)
+Note: same format as 01 command
+
+
+B1 - time (bidirectional) (all verions)
+DC/GC client->server: B1 00 04 00
+PC client->server:    04 00 B1 00
+BB client->server:    08 00 B1 00 00 00 00 00
+DC/GC server->client: B1 00 SS SS <time as text>
+PC server->client:    SS SS B1 00 <time as text>
+BB server->client:    SS SS B1 00 00 00 00 00 <time as text>
+Note: server should respond to a client's B1 command with its own B1 command
+Note: time is formatted as follows: "year:month:day: hour:minute:second.000"
+      example: 2006:12:24: 11:23:27.000
+
+
+B2 - patch memory (server->client) (DC, PC, GC)
+Note: format unknown
+Note: command not supported on PSO Plus and PSO Episode III for GameCube
+Note: variables in this command are treated as big-endian by GameCube versions
+
+
+B3 - patch reply / checksum (client->server) (DC, PC, GC)
+Note: format unknown
+Note: command not supported on PSO Plus and PSO Episode III for GameCube
+
+
+B7 - rank and meseta (server->client) (GC3)
+example:
+B7 00 20 00 88 13 00 00 2D 90 72 82 00 00 00 00
+00 00 00 00 FF FF FF 00 FF FF FF 00 FF FF FF FF
+Note: format unknown
+
+
+B8 - card list update (server->client) (GC3)
+B8 00 SS SS XX XX XX XX <card list file, PRS compressed>
+(S = command size, X = file size)
+
+
+BA - rank and meseta update (bidirectional) (GC3)
+Note: format unknown
+
+
+C0 - choice search (bidirectional) (all versions)
+Note: format unknown (I never studied Choice Search)
+
+
+C1 - create game (client->server) (all versions)
+DC/GC: C1 00 30 00 00 00 00 00 00 00 00 00 NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN PP PP PP PP
+PP PP PP PP PP PP PP PP PP PP PP PP DD BB CC EE
+PC: 50 00 C1 00 00 00 00 00 00 00 00 00 NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN PP PP PP PP
+PP PP PP PP PP PP PP PP PP PP PP PP PP PP PP PP
+PP PP PP PP PP PP PP PP PP PP PP PP DD BB CC 00
+BB: 58 00 C1 00 00 00 00 00 00 00 00 00 00 00 00 00
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+PP PP PP PP PP PP PP PP PP PP PP PP PP PP PP PP
+PP PP PP PP PP PP PP PP PP PP PP PP PP PP PP PP
+DD BB CC EE SS 00 00 00
+(N = name, P = password, D = difficulty, B = battle mode, C = challenge mode, S = solo mode, E = episode (0 = ep1, 1 = ep2, 2 = ep4))
+
+
+C5 - challenge rank (server->client) (all versions)
+Note: format unknown
+
+
+C6 - update blocked senders list (client->server) (all versions)
+DC/GC: C6 00 7C 00 <0x78 bytes: guild cards of blocked players>
+PC:    7C 00 C6 00 <0x78 bytes: guild cards of blocked players>
+BB:    80 00 C6 00 00 00 00 00 <0x78 bytes: guild cards of blocked players>
+
+
+C7 - enable mail auto-reply (client->server) (all versions)
+DC/GC: C7 00 SS SS <auto-reply string>
+PC:    SS SS C7 00 <auto-reply string (unicode)>
+BB:    SS SS C7 00 00 00 00 00 <auto-reply string (unicode)>
+(S = size)
+
+
+C8 - disable mail auto-reply (client->server) (all versions)
+DC/GC: C8 00 04 00
+PC:    04 00 C8 00
+BB:    08 00 C8 00 00 00 00 00
+
+
+C9 - broadcast command (bidirectional) (GC3)
+Note: same format and handling as 60 command
+Note: only broadcast to clients who are using Ep3
+
+
+CA - server data command (client->server) (GC3)
+Note: format unknown
+
+
+CB - broadcast command (bidirectional) (GC3)
+Note: same format and handling as 60 command
+Note: only broadcast to clients who are using Ep3
+
+
+D0 - trade command (format unknown)
+D1 - trade command (format unknown)
+D2 - trade command (format unknown)
+D3 - trade command (format unknown)
+D4 - trade command (format unknown)
+
+
+D5 - large message box (server->client) (all versions)
+Note: same format and handling as 1A command
+
+
+D6 - large message box closed (client->server) (GC)
+D6 00 04 00
+Note: PSO DC and PC will not send this command, so welcome screens before the lobby will only work on GC
+Note: PSO Plus and PSO Ep3 will not send this command after the client has joined a lobby
+
+
+D7 - load GBA game (client->server) (GC)
+D7 00 14 00 NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN NN
+(N = filename)
+Note: the server should send the requested file using A6 and A7 commands
+
+
+D8 - info board (bidirectional) (all versions)
+Note: exact format unknown
+
+
+D9 - write info board (client->server) (all versions)
+Note: same format as C7 command, but writes to the info board instead
+
+
+DA - change lobby event (all versions)
+DC/GC: DA XX 04 00
+PC:    04 00 DA XX
+BB:    08 00 DA 00 XX 00 00 00
+Note: list of lobby events can be found in the server software's info folder
+
+
+DB - verify license (DC?, PC?, GC)
+DC - menu change (bidirectional) (GC3)
+DC - guild card list (bidirectional) (BB)
+DE - unknown
+Note: this command is used by PSOBB
+
+
+E0 - begin loading game / account data (client->server) (BB)
+E2 - keyboard / gamepad config (server->client) (BB)
+E2 - tournament setup (client->server) (GC3)
+E3 - char preview request (client->server) (BB)
+E4 - select character / char not present (bidirectional) (BB)
+E5 - player preview / create new character (bidirectional) (BB)
+E6 - security data / guild card number (server->client) (BB)
+
+
+E6 - Spectator Team Select (client->server) (GC3)
+Note: same format and usage as 08 command
+
+
+E7 - player data (bidirectional) (BB)
+E8 - data exchange (bidirectional) (BB)
+
+
+EA - clan control (bidirectional) (BB)
+Note: this command has many subcommands; their formats are unknown
+
+
+EB - game parameters (bidirectional) (BB)
+EC - leave character select (client->server) (BB)
+
+
+EC - create Episode III game (client->server) (GC3)
+Note: same format and usage as C1 command
+
+
+ED - modify account data (client->server) (BB)
+EE - scrolling message (server->client) (BB)

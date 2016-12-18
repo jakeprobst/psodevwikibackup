@@ -1,0 +1,14 @@
+====== Overview of File Formats ======
+
+^Format^Extension^Description|
+|AFS|.afs|Archive format. In PSOBB, it stores XJ or XVM files (usually compressed with PRS).|
+|BIN|.bin| |
+|NJ|.nj|Ninja format|
+|NJM|.njm|Animation data|
+|[[format:rel|REL]]|.rel|Geometry|
+|TAM|.tam| |
+|XJ|.xj|Geometry|
+|XVM|.xvm|Archive format containing XVR textures|
+
+\\
+

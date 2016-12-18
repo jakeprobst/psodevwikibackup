@@ -1,0 +1,20 @@
+====== Architecture ======
+
+===== Original PSO Server Layout =====
+
+The original server was split up into 5 servers with different responsibilities.
+
+  * Patch Server
+  * Login Server
+  * Character Server
+  * Ship Server
+  * Ship Gate Server
+
+===== High Level Flow =====
+
+The client starts by connecting to the patch server and downloading any necessary patches. It then connects to the login server for user authentication. If authentication is successful, the login server directs the client to a character server.
+
+
+The character server's main function is to let the client select a character to play with. It also allows a client to create, change and remake characters. After character selection, the client is directed to a ship server.
+
+[[net:message_flow|Detailed Message Flow]]

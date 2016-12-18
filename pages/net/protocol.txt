@@ -1,0 +1,31 @@
+====== Network Protocol ======
+
+Communication happens over a binary protocol. All communication is encrypted, with the exception of the initial 03 - init encryption message sent by the client.
+
+===== Encryption =====
+
+^ ^ Patch Server ^ Login Server ^ Other Servers ^
+| DC/GC | Simple | Simple | Simple |
+| PC | Simple | Simple | Blowfish ECB |
+| BB | Simple | Blowfish ECB | Blowfish ECB |
+
+Many reverse-engineered implementations of the “simple” cipher are available but we don’t know whether this is a well-known algorithm or not.
+
+PC non-patch/login and BB non-patch servers possibly use Blowfish in ECB mode (source: Secure Java, https://books.google.be/books?id=io-ml0EcH8AC&pg=PA165&lpg=PA165&dq=phantasy+star+blowfish&source=bl&ots=thws8F9htl&sig=Jpq1V2ATHsC212O0ZJbjU4Fl52k&hl=nl&sa=X&ei=phxyVdrxN8qI7Abj5IN4&ved=0CCkQ6AEwAQ#v=onepage&q=phantasy%20star%20blowfish&f=false).
+
+===== String Encoding =====
+
+Source: [[https://code.google.com/p/sylverant/source/browse/trunk/login_server/l10n/login-strings.txt|https://code.google.com/p/sylverant/source/browse/trunk/login_server/l10n/login-strings.txt]]\\
+PC/BB: UTF-16 Little Endian\\
+DC/GC: Shift-JIS (for Japanese) or ISO-8859-1 (all other languages)
+
+
+==== Special Codes ====
+
+| \tE | Sets the encoding for non-Japanese |
+| \tJ | Sets the encoding for Japanese |
+| \tCn | Marks the start of colored text (valid values for n are 0 - 9 and G) |
+
+===== Messages =====
+
+The client and server communicate via [[net:messages|messages]].

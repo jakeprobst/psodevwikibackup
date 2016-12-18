@@ -1,0 +1,31 @@
+====== Detailed MessageFlow ======
+
+  - Client connects to patch server at port 11000
+    - Server sends 02 - init encryption (unencrypted)
+    - Client sends 02 - init encryption
+    - Server sends 04 - login
+    - Client sends 04 - login
+    - Server sends 13 - welcome message
+    - Server sends 0B - patch list start
+    - Server sends 0D - patch list end
+    - Client sends 10 - patch list done
+    - Server sends 12 - patch done
+    - Server disconnects (client disconnects on its own if server doesn’t)
+  - Client connects to login server at port 12000
+    - Server sends 03 - init encryption (unencrypted)
+    - Client sends 93 - authentication request
+    - Server sends E6 - authentication response with code 0 (success)
+    - Server sends 19 - redirect to character server
+    - Server disconnects (client disconnects on its own if server doesn’t)
+  - Client connects to character server at port specified by login server
+    - Server sends 03 - init encryption (unencrypted)
+    - Client sends 93 - authentication request
+    - Server sends E6 - authentication response with code 0 (success)
+    - Client sends E0 - account data request
+    - Server sends E2 - account data response
+    - Client sends E3 - character preview
+    - Server sends E5 - character preview response
+    - Client sends 1E8 - checksum
+    - Server sends 2E8 - checksum response
+    - Client sends 3E8 - 
+  - Client connects to game server

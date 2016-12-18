@@ -1,0 +1,153 @@
+1481786524	66.90.151.69	C	sidebar	eidolon	created		315
+1481786559	66.90.151.69	E	sidebar	eidolon			8
+1481786672	66.90.151.69	C	format:gsl	eidolon	created		212
+1481788894	84.194.206.190	C	start	wilhuf	created		230
+1481789092	84.194.206.190	E	start	wilhuf			68
+1481789388	84.194.206.190	C	network_protocol	wilhuf	created		1272
+1481789497	84.194.206.190	E	network_protocol	wilhuf			34
+1481790059	84.194.206.190	E	sidebar	wilhuf	[Networking] 		21
+1481790237	84.194.206.190	E	sidebar	wilhuf			27
+1481790266	84.194.206.190	E	sidebar	wilhuf			18
+1481790288	84.194.206.190	E	sidebar	wilhuf			-4
+1481790311	84.194.206.190	E	sidebar	wilhuf			0
+1481790558	84.194.206.190	C	net:commands	wilhuf	created		33267
+1481790790	84.194.206.190	E	sidebar	wilhuf			-4
+1481790806	84.194.206.190	C	net:protocol	wilhuf	created		1306
+1481790853	84.194.206.190	E	network_protocol	wilhuf			-1290
+1481790883	84.194.206.190	E	network_protocol	wilhuf			39
+1481790918	84.194.206.190	E	net:commands	wilhuf			17
+1481791046	84.194.206.190	E	net:protocol	wilhuf			88
+1481791219	84.194.206.190	E	net:commands	wilhuf			187
+1481791245	84.194.206.190	E	net:commands	wilhuf			2
+1481791391	84.194.206.190	E	net:commands	wilhuf	[Header Formats] 		-54
+1481791554	84.194.206.190	E	net:commands	wilhuf	[Command Layouts] 		35
+1481791667	84.194.206.190	E	start	wilhuf			-5
+1481794097	84.194.206.190	E	start	wilhuf			8
+1481794172	84.194.206.190	C	arch:architecture	wilhuf	created		753
+1481794224	84.194.206.190	E	arch:architecture	wilhuf			-2
+1481794240	84.194.206.190	E	arch:architecture	wilhuf			-8
+1481794285	84.194.206.190	E	arch:architecture	wilhuf	[High Level Flow] 		44
+1481794410	84.194.206.190	C	net:command_flow	wilhuf	created		1432
+1481794521	84.194.206.190	E	net:commands	wilhuf			110
+1481794644	84.194.206.190	E	sidebar	wilhuf			118
+1481794952	84.194.206.190	E	start	wilhuf			247
+1481794966	84.194.206.190	E	start	wilhuf	[Getting Started] 		1
+1481795012	84.194.206.190	E	sidebar	wilhuf			23
+1481795029	84.194.206.190	E	sidebar	wilhuf	[Formats] 		8
+1481795223	84.194.206.190	C	format:overview	wilhuf	created		332
+1481795719	84.194.206.190	E	sidebar	wilhuf			219
+1481795929	84.194.206.190	E	sidebar	wilhuf			164
+1481795950	84.194.206.190	E	sidebar	wilhuf	[Client Assets] 		4
+1481796132	84.194.206.190	C	client:assets:overview	wilhuf	created		490
+1481796311	84.194.206.190	C	format:rel	wilhuf	created		199
+1481796369	84.194.206.190	E	sidebar	wilhuf			11
+1481796402	84.194.206.190	E	sidebar	wilhuf			-105
+1481796560	84.194.206.190	E	format:rel	wilhuf			145
+1481797081	84.194.206.190	E	sidebar	wilhuf			64
+1481797141	84.194.206.190	E	sidebar	wilhuf			-19
+1481797235	84.194.206.190	C	server:assets:overview	wilhuf	created		682
+1481797338	84.194.206.190	E	sidebar	wilhuf			53
+1481797413	84.194.206.190	C	projects:servers:overview	wilhuf	created		349
+1481797431	84.194.206.190	E	projects:servers:overview	wilhuf			6
+1481797525	84.194.206.190	E	projects:servers:overview	wilhuf	[Tethealla] 		38
+1481797570	84.194.206.190	E	sidebar	wilhuf			51
+1481798385	84.194.206.190	E	net:protocol	wilhuf	[String Encoding] 		99
+1481798397	84.194.206.190	E	net:protocol	wilhuf	[String Encoding] 		2
+1481798591	84.194.206.190	E	format:rel	wilhuf			2774
+1481798627	84.194.206.190	E	format:rel	wilhuf			-2777
+1481799372	84.194.206.190	E	format:rel	wilhuf			6745
+1481799468	84.194.206.190	E	format:rel	wilhuf			-320
+1481799740	84.194.206.190	E	format:rel	wilhuf			-4094
+1481799818	84.194.206.190	E	format:rel	wilhuf			-264
+1481799862	84.194.206.190	E	format:rel	wilhuf			-194
+1481799908	84.194.206.190	E	format:rel	wilhuf			0
+1481799916	84.194.206.190	E	format:rel	wilhuf			4
+1481800269	84.194.206.190	E	format:rel	wilhuf			-57
+1481800291	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		-1
+1481800316	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		0
+1481810965	84.194.206.190	E	projects:servers:overview	wilhuf			4
+1481823322	84.194.206.190	E	net:commands	wilhuf			-191
+1481823434	84.194.206.190	E	sidebar	wilhuf			75
+1481823457	84.194.206.190	C	net:messages	wilhuf	created		33373
+1481823495	84.194.206.190	E	net:protocol	wilhuf			0
+1481823586	84.194.206.190	E	sidebar	wilhuf			-29
+1481823639	84.194.206.190	E	net:commands	wilhuf			-33365
+1481823841	84.194.206.190	D	net:commands	wilhuf	removed		-8
+1481823894	84.194.206.190	C	net:message_flow	wilhuf	created		1430
+1481823901	84.194.206.190	D	net:command_flow	wilhuf	removed		-1432
+1481823923	84.194.206.190	E	arch:architecture	wilhuf			0
+1481823935	84.194.206.190	E	net:messages	wilhuf			0
+1481823944	84.194.206.190	E	sidebar	wilhuf			-46
+1481827832	84.194.206.190	E	format:rel	wilhuf			122
+1481827842	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		-16
+1481828137	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		517
+1481828187	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		-26
+1481828515	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		36
+1481831574	66.90.151.69	E	format:gsl	eidolon			536
+1481832397	66.90.151.69	E	format:gsl	eidolon			1218
+1481832543	66.90.151.69	E	format:gsl	eidolon	[Guessing the endianness] fix ordered list		3
+1481832581	66.90.151.69	e	format:gsl	eidolon	[Guessing the endianness] 		-4
+1481832852	66.90.151.69	E	format:gsl	eidolon			301
+1481833003	66.90.151.69	e	format:gsl	eidolon	[Format caveats] saturn, not dreamcast		-27
+1481833100	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		42
+1481833122	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		8
+1481833202	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		-136
+1481833374	66.90.151.69	E	projects:servers:overview	eidolon	add idola		147
+1481833676	84.194.206.190	E	format:gsl	wilhuf			32
+1481833697	84.194.206.190	E	format:gsl	wilhuf			-4
+1481833726	84.194.206.190	E	format:gsl	wilhuf			3
+1481839518	201.197.122.38	e	format:overview	soly	Changing description of AFS file.		-35
+1481839578	201.197.122.38	e	format:overview	soly	Adding more details to AFS file		35
+1481844635	66.90.151.69	E	format:rel	eidolon			483
+1481853640	108.196.97.216	E	projects:servers:overview	jake	link to teth server		306
+1481853675	108.196.97.216	e	projects:servers:overview	jake			-2
+1481853718	108.196.97.216	e	projects:servers:overview	jake			4
+1481853926	108.196.97.216	E	projects:servers:overview	jake	added kohle's newserv		188
+1481882062	84.194.206.190	E	format:rel	wilhuf	[Main Trailer] 		-705
+1481882238	84.194.206.190	C	format:c_rel	wilhuf	created		3368
+1481882244	84.194.206.190	E	format:c_rel	wilhuf			-393
+1481882336	84.194.206.190	E	format:c_rel	wilhuf			5
+1481882610	84.194.206.190	E	format:c_rel	wilhuf			-920
+1481882645	84.194.206.190	E	format:c_rel	wilhuf			2
+1481882669	84.194.206.190	E	format:c_rel	wilhuf			5
+1481882715	84.194.206.190	C	format:n_rel	wilhuf	created		6660
+1481882723	84.194.206.190	E	format:n_rel	wilhuf			-804
+1481882944	84.194.206.190	E	format:n_rel	wilhuf			-1858
+1481882963	84.194.206.190	E	format:n_rel	wilhuf			2
+1481883238	84.194.206.190	E	format:n_rel	wilhuf			-4
+1481920365	84.194.206.190	E	projects:servers:overview	wilhuf	Ordered the servers alphabetically.		8
+1481920426	84.194.206.190	E	projects:servers:overview	wilhuf			71
+1481965701	84.194.206.190	E	format:n_rel	wilhuf			368
+1481965725	84.194.206.190	E	format:n_rel	wilhuf			0
+1481965759	84.194.206.190	E	format:n_rel	wilhuf	[N REL File Format] 		3
+1481965950	84.194.206.190	E	format:n_rel	wilhuf	[N REL File Format] 		197
+1481966143	84.194.206.190	E	format:n_rel	wilhuf	[N REL File Format] 		38
+1481966168	84.194.206.190	E	format:n_rel	wilhuf	[N REL File Format] 		2
+1481966181	108.196.97.216	E	projects:servers:overview	jake	from what I understand it is actually delphi		5
+1481977140	84.194.206.190	E	format:n_rel	wilhuf	[Section Table Entry] 		-106
+1481979257	84.194.206.190	E	format:n_rel	wilhuf			-293
+1481979302	84.194.206.190	E	format:n_rel	wilhuf			-14
+1481979331	84.194.206.190	E	format:n_rel	wilhuf			-8
+1481980847	84.194.206.190	E	format:rel	wilhuf	[Vertex] 		0
+1481981795	84.194.206.190	E	format:n_rel	wilhuf			1883
+1481981830	84.194.206.190	E	format:n_rel	wilhuf			-43
+1481982012	84.194.206.190	E	format:n_rel	wilhuf			123
+1481982113	84.194.206.190	E	format:n_rel	wilhuf			-114
+1481985581	84.194.206.190	E	format:n_rel	wilhuf			8
+1481985601	84.194.206.190	E	format:n_rel	wilhuf			5
+1481987012	84.194.206.190	E	format:n_rel	wilhuf			-27
+1481987414	84.194.206.190	E	format:n_rel	wilhuf	[Vertex Info Table] 		107
+1481987436	84.194.206.190	E	format:n_rel	wilhuf	[Vertex Info Table] 		-2
+1481987606	84.194.206.190	E	format:n_rel	wilhuf			118
+1481987638	84.194.206.190	C	format:n_rel:schthack_notes	wilhuf	created		3899
+1481987745	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			2277
+1481987770	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			1078
+1481987789	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			-478
+1481987818	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			-2885
+1481987903	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			10
+1481987916	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			4
+1481987943	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			11
+1481988109	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			132
+1481988238	84.194.206.190	E	format:n_rel	wilhuf	[Simple Geometry Offset Table Entry] 		6
+1481988381	84.194.206.190	E	format:n_rel	wilhuf	[Triangle Strip Table] 		99
+1481997493	84.194.206.190	E	format:overview	wilhuf			15

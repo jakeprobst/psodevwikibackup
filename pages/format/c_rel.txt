@@ -1,0 +1,54 @@
+====== C REL File Format ======
+
+This sub format describes geometrical data used for collision detection. The data is split up in 0 or more blocks of arbitrary size. The data block offsets can be found in the main offset table which is located at an offset located at main_block_offset.
+
+A right-handed coordinate system is used as in OpenGL where x goes from left to right, y goes from down to up and z goes in the opposite direction of the camera’s direction.
+
+===== Main Block =====
+
+The variably sized main block simply points to the main offset table, located at main_block_offset.
+
+^ Offset ^ Size ^ Type ^ Name ^ Value ^
+| 0 | 4 | u32 | main_offset_table_offset | Absolute offset to the main offset table |
+| 4 | unknown | unknown | unknown | 0,… |
+
+===== Main Offset Table =====
+
+^ Offset ^ Size ^ Type ^ Name ^ Value ^
+| 0 | main_offset_table_size | Main Offset Table Entry [] | main_offset_table_body | |
+
+===== Main Offset Table Entry =====
+
+Fixed-size structure of 24 bytes. Entries in the main offset table point to the start of a block trailer.
+
+^ Offset ^ Size ^ Type ^ Name ^ Value ^
+| 0 | 4 | u32 | block_trailer_offset | Absolute offset to a block trailer |
+| 4 | 20 | unknown | unknown | unknown |
+
+===== Block =====
+
+^ Offset ^ Size ^ Type ^ Name ^ Value ^
+| 0 | 12*vc | Vector [vc] | vertex_table | |
+| 12*vc | 36*tc | Triangle [tc] | triangle_table | |
+| 12*vc + 36*tc | 16 | Block Trailer | block_trailer | |
+
+===== Triangle =====
+
+Fixed-size structure of 36 bytes.
+
+^ Offset ^ Size ^ Type ^ Name ^ Value ^
+| 0 | 6 | u16[3] | vertex_index_table | Relative to the vertex table |
+| 6 | 2 | unknown | unknown | unknown |
+| 8 | 12 | Vertex | surface_normal | |
+| 20 | 12 | Vertex | triangle_center | |
+| 32 | 4 | f32 probably | unknown | unknown |
+
+===== Block Trailer =====
+
+Fixed-size structure of 16 bytes.
+
+^ Offset ^ Size ^ Type ^ Name ^ Value ^
+| 0 | 4 | u32 | vertex_count (vc) | |
+| 4 | 4 | u32 | vertex_table_offset | Absolute offset |
+| 8 | 4 | u32 | triangle_count (tc) | |
+| 12 | 4 | u32 | triangle_table_offset | Absolute offset |

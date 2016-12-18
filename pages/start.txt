@@ -1,0 +1,11 @@
+====== Phantasy Star Online Developer's Wiki ======
+
+This wiki is meant to be a complete reverse engineered technical specification for the Phantasy Star Online games. Everyone is encouraged to correct errors and add new information.
+
+===== Getting Started =====
+
+Curious about the technical details of PSO, want to understand some source code you found online or want to create a new tool for PSO? Start here.
+
+[[arch:architecture|Architecture]] - High level overview of how PSO works.
+
+[[net:protocol|Network Protocol]] - Network protocol details.

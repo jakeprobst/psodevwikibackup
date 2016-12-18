@@ -1,0 +1,120 @@
+====== PSO map file format explained by Schthack ======
+
+This is a copy the Readme.txt file from Schthack's mapviewer application.
+
+<file txt Readme.txt>
+PSO map file format explained by Schthack
+
+ok this file explain quickly how pso map file work. This is only for most of the map vertex
+and ared. it doesnt include animation and other information that could make the map look
+better.
+
+Note texture convertion and loading isnt explained look at the source code for a quick way
+but it doesnt work for all texture. best proof P2 map doesnt show any transparency
+
+note 2 for the source you need to have Delphi 6 and install the DelphiX component i included
+i use it for the direct input
+
+
+ok so this is it, the file we are interested in is the *n.rel one
+
+first seek at EoF-16 read the pointer there to get the offset of the main index.
+-----------------------
+Main index format:
+----------------------
+unknow :                8 byte;
+number of area :        dword;
+unknow :                dword;
+pointer to area list :  dword;
+Pointer to texturename: dword;
+
+-----------------------
+area list format per entry
+-----------------------
+ID:dword;               this is for pso reference, monster spam and item are linked to it
+dx,dy,dz:single;        the reference x,y,z for the vertex, to render proprely add it to the vertex x,y,z
+unknow1:dword;
+Rotation:dword;         the rotation value based on 65536, rotate the vertex using it
+unknow3:dword;
+unknow4:single;
+VertexA_Off:dword;      pointer to the list of vertex groupe A
+VertexB_Off:dword;      pointer to the list of vertex groupe b //this one is the animated one
+VertexA_Count:dword;    number of entry in eatch groupe
+VertexB_Count:dword;
+unknow8:dword;
+
+
+--------------------------
+vertex list format per entry
+--------------------------
+Format A
+
+Offset:dword;    pointer to the index and vertex
+unknow1:dword;
+unknow2:dword;
+Flag:dword;      some flag see the source code
+
+Format B
+
+Offset:dword;   pointer to the index and vertex
+unknow1:dword;  //probly pointer to the movement data
+unknow2:dword;
+unknow3:dword;
+unknow4:dword;
+unknow5:dword;
+unknow6:dword;
+Flag:dword;     some flag see the source code
+
+------------------------
+to read a Groupe
+------------------------
+
+seek to his offset+4 and you get
+
+offset to a pointer pointer: dword ..... will seek to it later
+REFXYZ: 3 Single float to add to the vertex XYZ
+fallow this probly a rotation and a Color value but i dont use it in the source
+
+ok now seek to the pointer+4 we got 4 line ago
+there you get:
+pointer to vertice list :   dword
+number of vertice list:     dword  - this one is always 1 in the map i tested might be more sometime
+pointer to Index listA:     dword  - this is the non transparent surface
+indexA count:               dword
+pointer to Index listB:     dword  - this is the transparent surface
+indexB count:               dword
+
+now read the index lists
+and then seek to the vertice pointer to get the last data you need
+
+type of vertex:         dword    <--- see the section above for the list of vertex type
+offset to the list      dword
+size of 1 entry         dword
+vertex count:           dword;
+
+no seek to list and read it
+
+--------------------
+index list format per entry
+--------------------
+Pointer to flag and texture id : dword
+type of data :                   dword
+Pointer to index:                dword  - eatch index is a Word
+index count :                    dword;
+empty:                           dword;
+
+
+------------------------
+vertex type
+------------------------
+
+ok in my code i used the size to select teh type but using the typ would be better since
+2 format can have the same size
+
+pso use those format and mabe more
+
+XYZ + Difuse format: X,Y,Z as single + color as dword; (16 bytes total)
+XYZ + Difuse + TEX1: X,Y,Z as single + color as dword + tu,ty as single (24 bytes)
+XYZ + XYZ_NORMAL + Diffuse : X,Y,Z,nX,nY,nZ as single + color as dword; (28 bytes total)
+XYZ + XYZ_NORMAL + Diffuse + TEX1: X,Y,Z,nX,nY,nZ as single + color as dword + tu,ty as single (36 bytes total)
+</file>

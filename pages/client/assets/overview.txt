@@ -1,0 +1,12 @@
+====== Client Assets ======
+
+| data/scene/map_*.tam | |
+| data/scene/map_*.xvm | Environment textures |
+| data/scene/map_*bm.bin | |
+| data/scene/map_*c.rel | Environment collision detection geometry |
+| data/scene/map_*n.rel | Environment rendering geometry and animation data |
+| data/scene/map_*r.rel | Mini map geometry |
+| data/scene/map_*s.nj | Skybox geometry |
+| data/scene/map_*s.xj | Skybox geometry (too?) |
+| data/scene/map_*s.xvm | Skybox texture |
+| data/scene/map_*t.rel | |

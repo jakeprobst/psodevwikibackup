@@ -1,0 +1,36 @@
+====== Server Implementations ======
+
+===== Archon =====
+
+Work in progress.\\
+Main language: Go\\
+[[https://github.com/dcrodman/archon|https://github.com/dcrodman/archon]]
+
+===== Idola =====
+
+Blue Burst compatible server derived from Sylverant and Tethealla.\\
+Main language: Rust\\
+[[https://github.com/BygoneWorlds/idolapsoserv|https://github.com/BygoneWorlds/idolapsoserv]]
+
+===== Newserv =====
+
+Written by Kohle. Functionality status unknown.\\
+Main language: C++\\
+[[http://www.fuzziqersoftware.com/projects.html|http://www.fuzziqersoftware.com/projects.html]]
+
+===== SchtServ =====
+
+The mother of all servers.\\
+Main language: Delphi\\
+
+===== Sylverant =====
+
+Fully functional, open source PSO server.\\
+Main language: C\\
+[[http://sourceforge.net/projects/sylverant/|http://sourceforge.net/projects/sylverant/]]
+
+===== Tethealla =====
+
+Written by Sodaboy and Tofuman (?), fully functional. Probably the most widely-used server.\\
+Main language: C\\
+[[https://www.pioneer2.net/community/threads/tethealla-server-setup-instructions.1/|https://www.pioneer2.net/community/threads/tethealla-server-setup-instructions.1/]]

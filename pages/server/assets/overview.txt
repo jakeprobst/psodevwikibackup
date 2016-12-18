@@ -1,0 +1,11 @@
+====== Server Assets ======
+
+===== Quests =====
+
+==== DAT and BIN Files ====
+
+A quest is described in a .dat file containing enemy, object, map event data and a .bin file containing meta data and assembly code which is called when certain events are triggered. These files are sent to the client in PRS-compressed form.
+
+=== QST Container Format ===
+
+Many server implementations choose to store the .dat and .bin file in the .qst container format. This format has two headers describing the contained files followed by the PRS-compressed .dat and .bin file split into commands and interlaced. This is basically a binary dump of the packet stream as sent by the original PSO servers.

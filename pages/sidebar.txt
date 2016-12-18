@@ -1,0 +1,31 @@
+===== Architecture =====
+[[arch:architecture|Architectural Overview]]
+
+===== Networking =====
+[[net:protocol|Protocol]] \\
+[[net:messages|Messages]] \\
+[[net:message_flow|Detailed Message Flow]]
+
+===== File Formats =====
+[[format:overview|Overview]]\\
+[[format:afs|AFS Archives (afs)]]\\
+[[format:nj|Ninja Models (nj)]]\\
+[[format:rel|REL (Geometry)]]\\
+[[format:gsl|GSL Archive (gsl)]]
+
+===== Encryption and Compression =====
+[[compression:prs|PRS Compression]]\\
+
+===== Assets =====
+[[client:assets:overview|Client Overview]]\\
+[[server:assets:overview|Server Overview]]
+
+===== Projects =====
+[[projects:servers:overview|Server Implementations]]
+
+===== Private Servers =====
+[[http://edenserv.net/|Eden]] (Tethealla server)\\
+[[https://ephinea.pioneer2.net/|Ephinea]] (Tethealla server)\\
+[[http://www.schtserv.com/|SchtServ]] (SchtServ server)\\
+[[http://sylverant.net/|Sylverant]] (Sylverant server)\\
+[[https://www.phantasystaronline.net/|Ultima]] (Tethealla server)

@@ -1,0 +1,54 @@
+====== REL File Format ======
+
+REL is a container format with a main body, followed by the main trailer. It has two sub-formats, [[:format:c_rel|C REL]] which is used for collision geometry and [[:format:n_rel|N REL]] which is used for render geometry.
+
+All integer values are in little endian format. Sizes are specified in bytes (octets).
+
+===== REL =====
+
+^Offset^Size^Type^Name^Value|
+|0|main_trailer_offset|variable|main_body|Depends on sub-format|
+|main_trailer_offset|main_trailer_size|Main Trailer|main_trailer| |
+
+==== Main Trailer ====
+
+The main trailer has a size of at least 32 bytes and contains an offset to the main data block of the main body.
+
+The main trailer contains a variable sized block of u16 values that seems to be some sort of checksum or index of blocks. Multiplying each u16 by 4 and summing the products gives the same value as the value located at the main block offset.
+
+^Calculated Value^Calculation^Description|
+|main_trailer_offset (mto)|checksum_offset|The absolute main trailer offset is equal to the checksum offset|
+|main_trailer_size (mts)|fcs + 32| |
+|checksum_padding_size (cps)|16 - checksum_size % 16|Padding to make sure the full checksum size is a multiple of 16 (byte size is a multiple of 32)|
+|full_checksum_size (fcs)|ceil(checksum_size / 16) * 16|checksum_size + checksum_padding_size|
+
+^Offset^Size^Type^Name^Value|
+|0|2*cs|u16[cs]|checksum| |
+|2*cs|2*cps|u16[cps]|checksum_padding|0,…|
+|2*fcs|4|u32|checksum_offset|Absolute offset to a checksum of the value at the main block offset|
+|2*fcs + 4|4|u32|checksum_size (cs)|Number of u16 values in the checksum of the value at the main block offset value|
+|2*fcs + 8|1|u8|unknown|1|
+|2*fcs + 9|7|unknown|unknown|0,…|
+|2*fcs + 16|4|u32|main_block_offset|Absolute offset to the main block|
+|2*fcs + 20|12|unknown|unknown|0,…|
+
+==== Sub formats and detection ====
+
+RELs appear to contain one of two scene formats; "C REL" which is simply a set of vertices and triangle indices, and "fmt2" or "N REL" which is a complex, multi-mesh scene with normals and textures. The game uses C RELs for collision and likely minimaps, and N RELs for renderable scenes.
+
+N RELs have the text string ''fmt2'' at ''main_block_offset''.
+
+It is unclear how the game behaves when a REL of the wrong format exists but has correct data.
+
+
+===== Vector =====
+
+Fixed-size structure of 12 bytes used in some sub-formats.
+
+^Offset^Size^Type^Name^Value|
+|0|4|f32|x| |
+|4|4|f32|y| |
+|8|4|f32|z| |
+
+\\
+
