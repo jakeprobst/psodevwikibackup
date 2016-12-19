@@ -17,11 +17,14 @@ FIXME figure out the details of texturing and animation
 Fixed-size structure of 24 bytes, located at main_block_offset.
 
 ^Offset^Size^Type^Name^Value|
-|0|8|unknown|unknown|unknown|
+|0|8|u16[4]|format|"fmt2"|
 |8|4|u32|section_count (ac)|Amount of sections in the section table|
 |12|4|unknown|unknown|unknown|
 |16|4|u32|section_table_offset|Absolute offset|
 |20|4|u32|texture_name_offset|Absolute offset to a string (encoding?)|
+
+\\
+
 
 ===== Section Table =====
 

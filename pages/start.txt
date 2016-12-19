@@ -9,3 +9,7 @@ Curious about the technical details of PSO, want to understand some source code 
 [[arch:architecture|Architecture]] - High level overview of how PSO works.
 
 [[net:protocol|Network Protocol]] - Network protocol details.
+
+===== Public Backups =====
+
+Backups of this wiki will be made daily and pushed to this public Git repository: [[https://github.com/jakeprobst/psodevwikibackup]].

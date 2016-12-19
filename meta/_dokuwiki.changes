@@ -151,3 +151,8 @@
 1481988238	84.194.206.190	E	format:n_rel	wilhuf	[Simple Geometry Offset Table Entry] 		6
 1481988381	84.194.206.190	E	format:n_rel	wilhuf	[Triangle Strip Table] 		99
 1481997493	84.194.206.190	E	format:overview	wilhuf			15
+1482059694	84.194.206.190	E	start	wilhuf			164
+1482102420	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			2
+1482103941	84.194.206.190	E	format:rel	wilhuf	[Vector] 		-2
+1482104106	84.194.206.190	E	format:n_rel	wilhuf	[Main Block] 		2
+1482104349	84.194.206.190	E	format:rel	wilhuf	[Sub formats and detection] 		0

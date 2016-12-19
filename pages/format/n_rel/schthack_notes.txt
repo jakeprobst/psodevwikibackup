@@ -1,6 +1,6 @@
 ====== PSO map file format explained by Schthack ======
 
-This is a copy the Readme.txt file from Schthack's mapviewer application.
+This is a copy of the Readme.txt file from Schthack's mapviewer application.
 
 <file txt Readme.txt>
 PSO map file format explained by Schthack
@@ -14,7 +14,6 @@ but it doesnt work for all texture. best proof P2 map doesnt show any transparen
 
 note 2 for the source you need to have Delphi 6 and install the DelphiX component i included
 i use it for the direct input
-
 
 ok so this is it, the file we are interested in is the *n.rel one
 
@@ -42,7 +41,6 @@ VertexB_Off:dword;      pointer to the list of vertex groupe b //this one is the
 VertexA_Count:dword;    number of entry in eatch groupe
 VertexB_Count:dword;
 unknow8:dword;
-
 
 --------------------------
 vertex list format per entry
@@ -103,7 +101,6 @@ Pointer to index:                dword  - eatch index is a Word
 index count :                    dword;
 empty:                           dword;
 
-
 ------------------------
 vertex type
 ------------------------
@@ -118,3 +115,4 @@ XYZ + Difuse + TEX1: X,Y,Z as single + color as dword + tu,ty as single (24 byte
 XYZ + XYZ_NORMAL + Diffuse : X,Y,Z,nX,nY,nZ as single + color as dword; (28 bytes total)
 XYZ + XYZ_NORMAL + Diffuse + TEX1: X,Y,Z,nX,nY,nZ as single + color as dword + tu,ty as single (36 bytes total)
 </file>
+
