@@ -36,3 +36,12 @@ net:messages
 net:message_flow
 sharnoth.com:psodevwiki:doku.php
 format:n_rel:schthack_notes
+format:bml
+format:dat:map_data
+format:dat:map_data_dat
+format:dat
+format:pvm
+format:pvr
+format:xj
+format:njm
+format:xjm

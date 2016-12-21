@@ -38,4 +38,4 @@ A file's data starts at its ''offset * 2048'' bytes from the start of the archiv
 
 ===== Format caveats =====
 
-Files have a maximum size of 4 GiB, although the expected storage medium for which the format was created for was CD-ROMs on the SEGA Saturn. With that said, the offset can account for archives up to //8 TiB// in size.
+Files have a maximum size of 4 GiB, although the expected storage medium for which the format was created for wasn't able to store that much data. With that said, the offset can account for archives up to //8 TiB// in size.

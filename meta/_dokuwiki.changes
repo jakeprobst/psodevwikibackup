@@ -156,3 +156,56 @@
 1482103941	84.194.206.190	E	format:rel	wilhuf	[Vector] 		-2
 1482104106	84.194.206.190	E	format:n_rel	wilhuf	[Main Block] 		2
 1482104349	84.194.206.190	E	format:rel	wilhuf	[Sub formats and detection] 		0
+1482210619	156.57.60.99	C	compression:prs	andy	created		277
+1482211827	24.45.149.69	C	format:nj	scoobydew	created		155
+1482227735	66.90.151.69	E	start	eidolon			50
+1482227778	66.90.151.69	E	start	eidolon	putting this link here since idk where else to put it		94
+1482228079	84.194.206.190	E	start	wilhuf	[Other Documentation] 		105
+1482230169	66.90.151.69	C	format:afs	eidolon	created		940
+1482230216	66.90.151.69	E	format:afs	eidolon	not 2kib block aligned		-28
+1482230306	66.90.151.69	E	format:gsl	eidolon			-15
+1482230326	66.90.151.69	E	format:gsl	eidolon	[Format caveats] 		24
+1482230551	66.90.151.69	E	format:gsl	eidolon			-4
+1482230690	66.90.151.69	E	sidebar	eidolon			29
+1482230904	66.90.151.69	C	format:bml	eidolon	created		217
+1482230920	66.90.151.69	E	format:bml	eidolon			5
+1482231137	66.90.151.69	E	compression:prs	eidolon			369
+1482231181	66.90.151.69	E	sidebar	eidolon			2
+1482231229	108.196.97.216	E	format:overview	jake			52
+1482232229	84.194.206.190	E	start	wilhuf			30
+1482232282	84.194.206.190	E	start	wilhuf	[Getting Started] 		93
+1482232325	84.194.206.190	E	format:overview	wilhuf			15
+1482232362	84.194.206.190	E	format:overview	wilhuf			42
+1482232405	84.194.206.190	E	format:overview	wilhuf			45
+1482232450	84.194.206.190	E	format:overview	wilhuf			41
+1482232483	108.196.97.216	E	sidebar	jake	[File Formats] 		26
+1482232511	108.196.97.216	E	sidebar	jake	[File Formats] 		6
+1482232536	84.194.206.190	E	format:overview	wilhuf			22
+1482232572	84.194.206.190	E	format:overview	wilhuf			1
+1482232600	84.194.206.190	E	format:overview	wilhuf			14
+1482232623	84.194.206.190	E	format:overview	wilhuf			5
+1482232653	84.194.206.190	E	format:overview	wilhuf			9
+1482232666	84.194.206.190	E	format:overview	wilhuf			6
+1482232706	84.194.206.190	E	arch:architecture	wilhuf			29
+1482232721	84.194.206.190	E	start	wilhuf	[Getting Started] 		0
+1482236688	108.196.97.216	C	format:dat:map_data_dat	jake	created		1201
+1482236726	108.196.97.216	E	format:dat:map_data_dat	jake			-4
+1482236736	108.196.97.216	E	format:dat:map_data_dat	jake	[Waves] 		2
+1482236745	108.196.97.216	E	format:dat:map_data_dat	jake	[Waves] 		0
+1482236907	108.196.97.216	E	format:dat:map_data_dat	jake	[Waves] 		40
+1482237168	108.196.97.216	C	format:dat	jake	created		1239
+1482237191	108.196.97.216	E	format:overview	jake			14
+1482237211	108.196.97.216	D	format:dat:map_data_dat	jake	removed		-1239
+1482237243	108.196.97.216	E	sidebar	jake	[File Formats] 		0
+1482237852	84.194.206.190	E	format:dat	wilhuf			166
+1482238180	84.194.206.190	E	format:dat	wilhuf			-16
+1482238691	84.194.206.190	E	format:dat	wilhuf			604
+1482238716	84.194.206.190	E	format:dat	wilhuf			3
+1482241187	108.196.97.216	E	format:dat	jake	[Header] 		14
+1482241304	108.196.97.216	E	format:dat	jake	[Waves] 		-85
+1482269294	66.90.151.69	E	format:bml	eidolon			68
+1482270568	66.90.151.69	E	format:bml	eidolon			1465
+1482274487	66.90.151.69	C	format:pvm	eidolon	created		203
+1482274540	66.90.151.69	C	format:pvr	eidolon	created		121
+1482274650	66.90.151.69	E	format:bml	eidolon			63
+1482287144	173.64.92.214	e	compression:prs	bluecrab	Primary location of the Sylverant source is on sourceforge, not GitHub. The GitHub is just a mirror, at least at the current time.		123

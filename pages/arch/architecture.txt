@@ -1,5 +1,7 @@
 ====== Architecture ======
 
+FIXME Still very incomplete
+
 ===== Original PSO Server Layout =====
 
 The original server was split up into 5 servers with different responsibilities.

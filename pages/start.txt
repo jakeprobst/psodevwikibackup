@@ -4,12 +4,22 @@ This wiki is meant to be a complete reverse engineered technical specification f
 
 ===== Getting Started =====
 
-Curious about the technical details of PSO, want to understand some source code you found online or want to create a new tool for PSO? Start here.
+Curious about the technical details of PSO, want to understand some source code you found online or want to create a new tool for PSO? Start here:
 
-[[arch:architecture|Architecture]] - High level overview of how PSO works.
+[[:arch:architecture|Architecture]] - High level overview of how PSO works.
 
-[[net:protocol|Network Protocol]] - Network protocol details.
+[[:net:protocol|Network Protocol]] - Network protocol details.
+
+[[:format:overview|File Formats]] - Overview of the various file formats Sega used for PSO.
 
 ===== Public Backups =====
 
-Backups of this wiki will be made daily and pushed to this public Git repository: [[https://github.com/jakeprobst/psodevwikibackup]].
+Backups of this wiki will be made daily and pushed to this public Git repository: [[https://github.com/jakeprobst/psodevwikibackup|https://github.com/jakeprobst/psodevwikibackup]].
+
+
+===== Other Documentation =====
+
+  * https://github.com/bogglez/Ninja-Lib/tree/master/documentation
+  * https://sylverant.net/wiki/index.php/Main_Page
+  * http://qedit.info/index.php?title=Main_Page
+  * Sega Katana Documentation

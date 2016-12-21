@@ -9,9 +9,11 @@
 ===== File Formats =====
 [[format:overview|Overview]]\\
 [[format:afs|AFS Archives (afs)]]\\
+[[format:dat|Map Data (dat)]]\\
 [[format:nj|Ninja Models (nj)]]\\
 [[format:rel|REL (Geometry)]]\\
-[[format:gsl|GSL Archive (gsl)]]
+[[format:gsl|GSL Archive (gsl)]]\\
+[[format:bml|BML Archive]]\\
 
 ===== Encryption and Compression =====
 [[compression:prs|PRS Compression]]\\

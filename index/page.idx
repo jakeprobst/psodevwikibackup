@@ -19,3 +19,11 @@ net:message_flow
 format:c_rel
 format:n_rel
 format:n_rel:schthack_notes
+compression:prs
+format:nj
+format:afs
+format:bml
+format:dat:map_data_dat
+format:dat
+format:pvm
+format:pvr
