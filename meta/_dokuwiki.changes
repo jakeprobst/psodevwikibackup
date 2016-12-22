@@ -209,3 +209,11 @@
 1482274540	66.90.151.69	C	format:pvr	eidolon	created		121
 1482274650	66.90.151.69	E	format:bml	eidolon			63
 1482287144	173.64.92.214	e	compression:prs	bluecrab	Primary location of the Sylverant source is on sourceforge, not GitHub. The GitHub is just a mirror, at least at the current time.		123
+1482307685	84.194.206.190	E	format:dat	wilhuf	[Header] 		6
+1482307821	84.194.206.190	E	format:dat	wilhuf	[Header] 		-6
+1482307912	84.194.206.190	E	format:dat	wilhuf	[NPCs] 		131
+1482310405	84.194.206.190	E	format:dat	wilhuf			951
+1482310411	84.194.206.190	E	format:dat	wilhuf			-5
+1482310437	84.194.206.190	E	format:dat	wilhuf			10
+1482310938	84.194.206.190	E	format:dat	wilhuf	[Entity Table] 		2
+1482346131	84.194.206.190	E	format:dat	wilhuf	[Entity Table - Object] 		1
