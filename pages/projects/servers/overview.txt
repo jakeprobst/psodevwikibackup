@@ -20,7 +20,7 @@ Main language: C++\\
 
 ===== SchtServ =====
 
-The mother of all servers.\\
+The mother of all servers, written by Schthack.\\
 Main language: Delphi\\
 
 ===== Sylverant =====
@@ -31,6 +31,6 @@ Main language: C\\
 
 ===== Tethealla =====
 
-Written by Sodaboy and Tofuman (?), fully functional. Probably the most widely-used server.\\
+Written by Sodaboy, fully functional. Probably the most widely-used server.\\
 Main language: C\\
 [[https://www.pioneer2.net/community/threads/tethealla-server-setup-instructions.1/|https://www.pioneer2.net/community/threads/tethealla-server-setup-instructions.1/]]

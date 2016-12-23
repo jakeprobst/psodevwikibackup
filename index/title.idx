@@ -24,6 +24,8 @@ PRS Compression
 AFS Archive
 BML Archive
 
-Map Objects
+Quest Map Data (dat)
 PVM Texture Archive
 PVR Texture
+Area Mappings
+Quest Meta Data and Object Code (bin)

@@ -1,5 +1,9 @@
 ====== Client Assets ======
 
+[[client:assets:area_mappings|Area Mappings]]
+
+===== File Types =====
+
 | data/scene/map_*.tam | |
 | data/scene/map_*.xvm | Environment textures |
 | data/scene/map_*bm.bin | |

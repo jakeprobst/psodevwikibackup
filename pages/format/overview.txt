@@ -2,7 +2,7 @@
 
 ^Format^Extension^Description|
 |[[format:afs|AFS]]|.afs|Archive format. In PSOBB, it stores XJ or XVM files (usually compressed with PRS).|
-|BIN|.bin|Quest metadata and object code|
+|[[format:bin|BIN]]|.bin|Quest metadata and object code|
 |[[format:bml|BML]]|.bml|Archive format for [[compression:prs|PRS]] compressed files.|
 |[[format:dat|DAT]]|.dat|Quest map objects, spawns, waves|
 |[[format:gsl|GSL]]|.gsl|Archive format|

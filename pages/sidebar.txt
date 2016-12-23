@@ -9,7 +9,8 @@
 ===== File Formats =====
 [[format:overview|Overview]]\\
 [[format:afs|AFS Archives (afs)]]\\
-[[format:dat|Map Data (dat)]]\\
+[[format:bin|Quest Meta Data and Object Code (bin)]]\\
+[[format:dat|Quest Map Data (dat)]]\\
 [[format:nj|Ninja Models (nj)]]\\
 [[format:rel|REL (Geometry)]]\\
 [[format:gsl|GSL Archive (gsl)]]\\

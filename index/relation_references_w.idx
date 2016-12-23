@@ -45,3 +45,5 @@ format:pvr
 format:xj
 format:njm
 format:xjm
+client:assets:area_mappings
+format:bin
