@@ -1,39 +1,3 @@
-1481920365	84.194.206.190	E	projects:servers:overview	wilhuf	Ordered the servers alphabetically.		8
-1481920426	84.194.206.190	E	projects:servers:overview	wilhuf			71
-1481965701	84.194.206.190	E	format:n_rel	wilhuf			368
-1481965725	84.194.206.190	E	format:n_rel	wilhuf			0
-1481965759	84.194.206.190	E	format:n_rel	wilhuf	[N REL File Format] 		3
-1481965950	84.194.206.190	E	format:n_rel	wilhuf	[N REL File Format] 		197
-1481966143	84.194.206.190	E	format:n_rel	wilhuf	[N REL File Format] 		38
-1481966168	84.194.206.190	E	format:n_rel	wilhuf	[N REL File Format] 		2
-1481966181	108.196.97.216	E	projects:servers:overview	jake	from what I understand it is actually delphi		5
-1481977140	84.194.206.190	E	format:n_rel	wilhuf	[Section Table Entry] 		-106
-1481979257	84.194.206.190	E	format:n_rel	wilhuf			-293
-1481979302	84.194.206.190	E	format:n_rel	wilhuf			-14
-1481979331	84.194.206.190	E	format:n_rel	wilhuf			-8
-1481980847	84.194.206.190	E	format:rel	wilhuf	[Vertex] 		0
-1481981795	84.194.206.190	E	format:n_rel	wilhuf			1883
-1481981830	84.194.206.190	E	format:n_rel	wilhuf			-43
-1481982012	84.194.206.190	E	format:n_rel	wilhuf			123
-1481982113	84.194.206.190	E	format:n_rel	wilhuf			-114
-1481985581	84.194.206.190	E	format:n_rel	wilhuf			8
-1481985601	84.194.206.190	E	format:n_rel	wilhuf			5
-1481987012	84.194.206.190	E	format:n_rel	wilhuf			-27
-1481987414	84.194.206.190	E	format:n_rel	wilhuf	[Vertex Info Table] 		107
-1481987436	84.194.206.190	E	format:n_rel	wilhuf	[Vertex Info Table] 		-2
-1481987606	84.194.206.190	E	format:n_rel	wilhuf			118
-1481987638	84.194.206.190	C	format:n_rel:schthack_notes	wilhuf	created		3899
-1481987745	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			2277
-1481987770	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			1078
-1481987789	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			-478
-1481987818	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			-2885
-1481987903	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			10
-1481987916	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			4
-1481987943	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			11
-1481988109	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			132
-1481988238	84.194.206.190	E	format:n_rel	wilhuf	[Simple Geometry Offset Table Entry] 		6
-1481988381	84.194.206.190	E	format:n_rel	wilhuf	[Triangle Strip Table] 		99
-1481997493	84.194.206.190	E	format:overview	wilhuf			15
 1482059694	84.194.206.190	E	start	wilhuf			164
 1482102420	84.194.206.190	E	format:n_rel:schthack_notes	wilhuf			2
 1482103941	84.194.206.190	E	format:rel	wilhuf	[Vector] 		-2
@@ -133,3 +97,11 @@
 1482437967	84.194.206.190	E	projects:servers:overview	wilhuf	[SchtServ] 		1
 1482438360	84.194.206.190	E	server:assets:overview	wilhuf			-2
 1482438414	84.194.206.190	E	server:assets:overview	wilhuf			30
+1482576727	84.194.206.190	E	server:assets:overview	wilhuf			2
+1482576940	84.194.206.190	E	server:assets:overview	wilhuf			35
+1482576965	84.194.206.190	C	format:qst	wilhuf	created		367
+1482576974	84.194.206.190	E	server:assets:overview	wilhuf			-235
+1482577048	84.194.206.190	E	format:overview	wilhuf			90
+1482577149	84.194.206.190	E	format:qst	wilhuf			2
+1482577785	84.194.206.190	E	format:qst	wilhuf			445
+1482578393	84.194.206.190	E	format:qst	wilhuf			539

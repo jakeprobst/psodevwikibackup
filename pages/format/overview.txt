@@ -8,6 +8,7 @@
 |[[format:gsl|GSL]]|.gsl|Archive format|
 |[[format:nj|Ninja]]|.nj|Model geometry|
 |Ninja Motion|.njm|Model animation data|
+|[[format:qst|QST]]|.qst|Quest container format, contains a complete quest (DAT and BIN)|
 |[[format:rel|REL]]|.rel|Geometry|
 |TAM|.tam| |
 |XJ|.xj|Geometry|
