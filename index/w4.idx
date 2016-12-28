@@ -575,3 +575,7 @@ swap
 alff
 onto
 1024
+wall
+mask
+door
+0b10
