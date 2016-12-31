@@ -1,36 +1,3 @@
-1482430054	84.194.206.190	E	client:assets:overview	wilhuf			71
-1482431013	84.194.206.190	C	client:assets:area_mappings	wilhuf	created		1018
-1482431419	84.194.206.190	E	client:assets:area_mappings	wilhuf			153
-1482431573	84.194.206.190	E	client:assets:area_mappings	wilhuf			187
-1482431619	84.194.206.190	E	format:dat	wilhuf			10
-1482431633	84.194.206.190	E	format:dat	wilhuf			-1
-1482431677	84.194.206.190	E	sidebar	wilhuf			6
-1482431684	84.194.206.190	E	format:dat	wilhuf			0
-1482431779	84.194.206.190	E	sidebar	wilhuf			50
-1482431788	84.194.206.190	C	format:bin	wilhuf	created		47
-1482431810	84.194.206.190	E	format:overview	wilhuf			15
-1482431839	84.194.206.190	E	sidebar	wilhuf			4
-1482432264	84.194.206.190	E	format:bin	wilhuf			266
-1482432369	84.194.206.190	E	format:bin	wilhuf			169
-1482435414	84.194.206.190	E	format:bin	wilhuf			1
-1482435420	84.194.206.190	E	sidebar	wilhuf			1
-1482435438	84.194.206.190	E	format:bin	wilhuf			5
-1482435473	84.194.206.190	E	format:bin	wilhuf			25201
-1482435497	84.194.206.190	E	format:bin	wilhuf			-1
-1482435531	84.194.206.190	E	format:bin	wilhuf			0
-1482435543	84.194.206.190	E	format:bin	wilhuf			0
-1482436032	84.194.206.190	E	format:bin	wilhuf			-3018
-1482436508	84.194.206.190	E	format:bin	wilhuf			458
-1482436982	84.194.206.190	E	format:bin	wilhuf			547
-1482437070	84.194.206.190	E	format:bin	wilhuf	[Function Offset Table] 		21
-1482437191	84.194.206.190	E	format:bin	wilhuf			1
-1482437366	84.194.206.190	E	format:bin	wilhuf			250
-1482437395	84.194.206.190	E	format:bin	wilhuf	[Object Code] 		18
-1482437933	84.194.206.190	E	projects:servers:overview	wilhuf	[Tethealla] 		-16
-1482437957	84.194.206.190	E	projects:servers:overview	wilhuf	[SchtServ] 		20
-1482437967	84.194.206.190	E	projects:servers:overview	wilhuf	[SchtServ] 		1
-1482438360	84.194.206.190	E	server:assets:overview	wilhuf			-2
-1482438414	84.194.206.190	E	server:assets:overview	wilhuf			30
 1482576727	84.194.206.190	E	server:assets:overview	wilhuf			2
 1482576940	84.194.206.190	E	server:assets:overview	wilhuf			35
 1482576965	84.194.206.190	C	format:qst	wilhuf	created		367
