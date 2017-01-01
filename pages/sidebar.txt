@@ -23,6 +23,9 @@
 [[client:assets:overview|Client Overview]]\\
 [[server:assets:overview|Server Overview]]
 
+===== Client =====
+[[client|Client]]
+
 ===== Projects =====
 [[projects:servers:overview|Server Implementations]]
 

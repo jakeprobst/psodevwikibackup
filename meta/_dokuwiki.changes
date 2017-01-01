@@ -1,11 +1,3 @@
-1482576727	84.194.206.190	E	server:assets:overview	wilhuf			2
-1482576940	84.194.206.190	E	server:assets:overview	wilhuf			35
-1482576965	84.194.206.190	C	format:qst	wilhuf	created		367
-1482576974	84.194.206.190	E	server:assets:overview	wilhuf			-235
-1482577048	84.194.206.190	E	format:overview	wilhuf			90
-1482577149	84.194.206.190	E	format:qst	wilhuf			2
-1482577785	84.194.206.190	E	format:qst	wilhuf			445
-1482578393	84.194.206.190	E	format:qst	wilhuf			539
 1482796099	84.194.206.190	E	format:qst	wilhuf			30
 1482866550	84.194.206.190	E	format:c_rel	wilhuf			286
 1482866750	84.194.206.190	E	format:c_rel	wilhuf			-57
@@ -28,3 +20,17 @@
 1482878601	84.194.206.190	E	format:c_rel	wilhuf			-98
 1482878740	84.194.206.190	E	format:c_rel	wilhuf	[Flags] 		24
 1482938156	84.194.206.190	E	format:dat	wilhuf	[Entity Table - Object] 		60
+1483194236	201.197.122.38	e	format:dat	soly	[Entity Table - NPC] Separated some of the uint8_t unknown[] into their correct data types		45
+1483196251	84.194.206.190	E	sidebar	wilhuf			38
+1483196351	84.194.206.190	C	client	wilhuf	created		118
+1483198674	108.196.97.216	E	format:dat	jake	[Entity Table - Wave] 		286
+1483205569	84.194.206.190	E	format:qst	wilhuf			22
+1483207477	84.194.206.190	E	format:qst	wilhuf	[Message] 		106
+1483207868	84.194.206.190	E	format:qst	wilhuf	[Message] 		44
+1483210063	84.194.206.190	E	format:qst	wilhuf	[Message] 		5
+1483210991	84.194.206.190	E	format:qst	wilhuf	[Header] 		104
+1483211452	84.194.206.190	E	format:qst	wilhuf			107
+1483226808	84.194.206.190	E	format:qst	wilhuf			-28
+1483226925	84.194.206.190	E	format:qst	wilhuf			38
+1483226963	84.194.206.190	E	format:qst	wilhuf	[Header] 		12
+1483226981	84.194.206.190	E	format:qst	wilhuf	[Header] 		6
