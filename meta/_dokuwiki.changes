@@ -1,4 +1,3 @@
-1482877740	84.194.206.190	E	format:c_rel	wilhuf			69
 1482878601	84.194.206.190	E	format:c_rel	wilhuf			-98
 1482878740	84.194.206.190	E	format:c_rel	wilhuf	[Flags] 		24
 1482938156	84.194.206.190	E	format:dat	wilhuf	[Entity Table - Object] 		60
@@ -18,3 +17,4 @@
 1483226981	84.194.206.190	E	format:qst	wilhuf	[Header] 		6
 1483296088	95.90.247.156	E	format:nj	shiva			63
 1483442747	188.118.52.161	E	format:qst	wilhuf	[Header] 		-2
+1483538472	201.197.122.38	E	format:dat	soly	[Entity Table - NPC] Removed exp and rt_index as those are not actually part of the structure		-4
