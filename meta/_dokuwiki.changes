@@ -1,8 +1,3 @@
-1482878601	84.194.206.190	E	format:c_rel	wilhuf			-98
-1482878740	84.194.206.190	E	format:c_rel	wilhuf	[Flags] 		24
-1482938156	84.194.206.190	E	format:dat	wilhuf	[Entity Table - Object] 		60
-1483194236	201.197.122.38	e	format:dat	soly	[Entity Table - NPC] Separated some of the uint8_t unknown[] into their correct data types		45
-1483196251	84.194.206.190	E	sidebar	wilhuf			38
 1483196351	84.194.206.190	C	client	wilhuf	created		118
 1483198674	108.196.97.216	E	format:dat	jake	[Entity Table - Wave] 		286
 1483205569	84.194.206.190	E	format:qst	wilhuf			22
@@ -19,3 +14,7 @@
 1483442747	188.118.52.161	E	format:qst	wilhuf	[Header] 		-2
 1483538472	201.197.122.38	E	format:dat	soly	[Entity Table - NPC] Removed exp and rt_index as those are not actually part of the structure		-4
 1483724868	108.196.97.216	E	format:dat	jake	[Entity Table - NPC] 		2
+1483771748	108.196.97.216	E	format:dat	jake	[Entity Table - Wave] 		94
+1483798079	84.194.206.190	E	format:rel	wilhuf			157
+1483798300	84.194.206.190	E	format:rel	wilhuf			196
+1483798411	84.194.206.190	E	format:rel	wilhuf			108
