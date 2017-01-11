@@ -1,37 +1,46 @@
 ===== Architecture =====
-[[arch:architecture|Architectural Overview]]
+
+[[:arch:architecture|Architectural Overview]]
 
 ===== Networking =====
-[[net:protocol|Protocol]] \\
-[[net:messages|Messages]] \\
-[[net:message_flow|Detailed Message Flow]]
+
+[[:net:protocol|Protocol]]\\
+[[:net:messages|Messages]]\\
+[[:net:message_flow|Detailed Message Flow]]
 
 ===== File Formats =====
-[[format:overview|Overview]]\\
-[[format:afs|AFS Archives (afs)]]\\
-[[format:bin|Quest Meta Data and Object Code (bin)]]\\
-[[format:dat|Quest Map Data (dat)]]\\
-[[format:nj|Ninja Models (nj)]]\\
-[[format:rel|REL (Geometry)]]\\
-[[format:gsl|GSL Archive (gsl)]]\\
-[[format:bml|BML Archive]]\\
+
+[[:format:overview|Overview]]\\
+[[:format:afs|AFS Archives (afs)]]\\
+[[:format:bin|Quest Meta Data and Object Code (bin)]]\\
+[[:format:dat|Quest Map Data (dat)]]\\
+[[:format:nj|Ninja Models (nj)]]\\
+[[:format:rel|REL]]\\
+[[:format:gsl|GSL Archive (gsl)]]\\
+[[:format:bml|BML Archive]]
 
 ===== Encryption and Compression =====
-[[compression:prs|PRS Compression]]\\
+
+[[:compression:prs|PRS Compression]]
 
 ===== Assets =====
-[[client:assets:overview|Client Overview]]\\
-[[server:assets:overview|Server Overview]]
+
+[[:client:assets:overview|Client Overview]]\\
+[[:server:assets:overview|Server Overview]]
 
 ===== Client =====
-[[client|Client]]
+
+[[:client|Client]]
 
 ===== Projects =====
-[[projects:servers:overview|Server Implementations]]
+
+[[:projects:servers:overview|Server Implementations]]
 
 ===== Private Servers =====
+
 [[http://edenserv.net/|Eden]] (Tethealla server)\\
 [[https://ephinea.pioneer2.net/|Ephinea]] (Tethealla server)\\
 [[http://www.schtserv.com/|SchtServ]] (SchtServ server)\\
 [[http://sylverant.net/|Sylverant]] (Sylverant server)\\
 [[https://www.phantasystaronline.net/|Ultima]] (Tethealla server)
+

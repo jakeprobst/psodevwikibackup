@@ -1,6 +1,10 @@
 ====== REL File Format ======
 
-REL is a container format with a main body, followed by the main trailer. It has two sub-formats, [[:format:c_rel|C REL]] which is used for collision geometry and [[:format:n_rel|N REL]] which is used for render geometry.
+REL is a container format with a main body, followed by the main trailer. It has many sub-formats:
+
+  * [[:format:c_rel|C REL]] for collision geometry
+  * [[:format:n_rel|N REL]] for render geometry
+  * [[:format:shops_rel|Shops REL]] for shops configuration
 
 All integer values are in little endian format. Sizes are specified in bytes (octets).
 
@@ -34,25 +38,16 @@ The main trailer contains a variable sized block of u16 values that seems to be 
 |2*fcs + 16|4|u32|main_block_offset|Absolute offset to the main block|
 |2*fcs + 20|12|unknown|unknown|0,…|
 
-==== Vector ====
-
-Fixed-size structure of 12 bytes used in some sub-formats.
-
-^Offset^Size^Type^Name^Value|
-|0|4|f32|x| |
-|4|4|f32|y| |
-|8|4|f32|z| |
-
 ===== Parsing =====
 
 To start parsing a .rel file simply read the ''main_block_offset'' (u32) at offset ''EOF - 16'' which will point to the sub-format's main block. The rest of the information int the main trailer is either redundant or isn't documented yet and doesn't seem to be important.
 
 ==== Sub-Formats and Detection ====
 
-RELs appear to contain one of two scene formats; "C REL" which is simply a set of vertices and triangle indices, and "fmt2" or "N REL" which is a complex, multi-mesh scene with normals and textures. The game uses C RELs for collision and likely minimaps, and N RELs for renderable scenes.
+RELs are used for two scene formats; "C REL" which is simply a set of vertices and triangle indices, and "fmt2" or "N REL" which is a complex, multi-mesh scene with normals and textures. The game uses C RELs for collision and likely minimaps, and N RELs for renderable scenes. The format is also used for shops configuration.
 
 N RELs have the text string ''fmt2'' at ''main_block_offset''.
 
 It is unclear how the game behaves when a REL of the wrong format exists but has correct data.
 
-Details of the sub-formats are on separate pages, see [[:format:c_rel|C REL]] and [[:format:n_rel|N REL]].
+Details of the sub-formats are on separate pages, see [[:format:c_rel|C REL]], [[:format:n_rel|N REL]] and [[:format:shops_rel|Shops REL]].

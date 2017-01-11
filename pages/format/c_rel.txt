@@ -4,6 +4,15 @@ This sub format describes geometrical data used for collision detection. The dat
 
 A right-handed coordinate system is used as in OpenGL where x goes from left to right, y goes from down to up and z goes in the opposite direction of the camera’s direction.
 
+===== Vector =====
+
+Fixed-size structure of 12 bytes used throughout the format.
+
+^Offset^Size^Type^Name^Value|
+|0|4|f32|x| |
+|4|4|f32|y| |
+|8|4|f32|z| |
+
 ===== Main Block =====
 
 The variably sized main block simply points to the main offset table, located at main_block_offset.
@@ -28,7 +37,7 @@ Fixed-size structure of 24 bytes. Entries in the main offset table point to the 
 ===== Block =====
 
 ^ Offset ^ Size ^ Type ^ Name ^ Value ^
-| 0 | 12*vc | [[:format:rel#vector|Vector]] [vc] | vertex_table | |
+| 0 | 12*vc | Vector [vc] | vertex_table | |
 | 12*vc | 36*tc | Triangle [tc] | triangle_table | |
 | 12*vc + 36*tc | 16 | Block Trailer | block_trailer | |
 
@@ -39,8 +48,8 @@ Fixed-size structure of 36 bytes.
 ^ Offset ^ Size ^ Type ^ Name ^ Value ^
 | 0 | 6 | u16[3] | vertex_index_table | Relative to the vertex table |
 | 6 | 2 | u16 | flags | Contains information about the type of object this triangle belongs to |
-| 8 | 12 | [[:format:rel#vector|Vector]] | surface_normal | |
-| 20 | 12 | [[:format:rel#vector|Vector]] | triangle_center | |
+| 8 | 12 | Vector | surface_normal | |
+| 20 | 12 | Vector | triangle_center | |
 | 32 | 4 | f32 | bounding_sphere_radius | Defines, together with triangle_center, the bounding sphere |
 
 ==== Flags ====

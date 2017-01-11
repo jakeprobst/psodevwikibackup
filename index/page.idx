@@ -31,3 +31,12 @@ client:assets:area_mappings
 format:bin
 format:qst
 client
+format:rel_shops
+shops_configuration
+shops_configuration_armor
+shops_configuration_tool
+shops_configuration_weapon
+format:shops_rel
+format:shops_rel:armor
+format:shops_rel:tool
+format:shops_rel:weapon

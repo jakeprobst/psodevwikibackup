@@ -1,6 +1,8 @@
 ====== Client Assets ======
 
-[[client:assets:area_mappings|Area Mappings]]
+[[:format:shops_rel|Shops Configuration]]
+
+[[:client:assets:area_mappings|Area Mappings]]
 
 ===== File Types =====
 

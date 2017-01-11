@@ -18,3 +18,43 @@
 1483798079	84.194.206.190	E	format:rel	wilhuf			157
 1483798300	84.194.206.190	E	format:rel	wilhuf			196
 1483798411	84.194.206.190	E	format:rel	wilhuf			108
+1484033580	201.197.122.38	C	format:rel_shops	soly	created, will add info in a bit		13
+1484033641	201.197.122.38	D	format:rel_shops	soly	removed		-13
+1484034191	201.197.122.38	C	shops_configuration	soly	created page and added some information, missing links		878
+1484034248	201.197.122.38	e	shops_configuration	soly	reworded psobb statement		-5
+1484035543	201.197.122.38	C	shops_configuration_armor	soly	created, added structs, need to arrange the extra information a bit better		1720
+1484035740	201.197.122.38	C	shops_configuration_tool	soly	created, added structs, need to rearrange information		3562
+1484036012	201.197.122.38	C	shops_configuration_weapon	soly	created, added everything in a single code block, will fix that later		5137
+1484036077	201.197.122.38	e	shops_configuration	soly	added links to structs		100
+1484071839	84.194.206.190	E	format:rel	wilhuf			37
+1484072079	201.197.122.38	C	format:shops_rel	soly	created, copied from old page http://sharnoth.com/psodevwiki/doku.php?id=shops_configuration		799
+1484072191	201.197.122.38	C	format:shops_rel:armor	soly	created, copied amor data from old page		1721
+1484072259	201.197.122.38	C	format:shops_rel:tool	soly	created, copied from old page		3573
+1484072387	201.197.122.38	C	format:shops_rel:weapon	soly	created, copied from old page (formatted)		5401
+1484072467	201.197.122.38	E	format:shops_rel	soly	Updated links to docs of each file		144
+1484072494	201.197.122.38	e	format:shops_rel	soly	forgot part of the link		24
+1484072616	201.197.122.38	D	shops_configuration_weapon	soly	removed		-5137
+1484072621	201.197.122.38	D	shops_configuration_tool	soly	removed		-3562
+1484072625	201.197.122.38	D	shops_configuration_armor	soly	removed		-1720
+1484072634	201.197.122.38	D	shops_configuration	soly	removed		-973
+1484072727	201.197.122.38	E	sidebar	soly	Removed geometry from REL name		9
+1484072830	84.194.206.190	E	client:assets:overview	wilhuf			44
+1484073419	84.194.206.190	E	format:rel	wilhuf			70
+1484073488	84.194.206.190	E	format:rel	wilhuf			-151
+1484073579	84.194.206.190	E	format:c_rel	wilhuf			84
+1484073590	84.194.206.190	E	format:c_rel	wilhuf			2
+1484073603	84.194.206.190	E	format:n_rel	wilhuf			155
+1484073647	201.197.122.38	E	format:shops_rel:armor	soly	Added c syntax		70
+1484073795	201.197.122.38	E	format:shops_rel:armor	soly	testing the c code blocks		-59
+1484073919	201.197.122.38	E	format:shops_rel:armor	soly	testing cs code block		11
+1484074035	201.197.122.38	R	format:shops_rel:armor	soly	old revision restored (2017/01/10 13:16)	1484072191	-22
+1484074085	84.194.206.190	E	format:shops_rel:armor	wilhuf			2
+1484074102	84.194.206.190	E	format:shops_rel:armor	wilhuf			14
+1484074342	201.197.122.38	E	format:shops_rel:tool	soly	testing code block again		0
+1484074429	201.197.122.38	E	format:shops_rel:tool	soly	test		2
+1484074468	201.197.122.38	E	format:shops_rel:tool	soly	test		4
+1484074517	201.197.122.38	E	format:shops_rel:tool	soly	test		14
+1484074616	201.197.122.38	E	format:shops_rel:weapon	soly	added C syntax		-2
+1484074883	201.197.122.38	E	format:shops_rel:armor	soly			-1727
+1484074961	201.197.122.38	R	format:shops_rel:armor	soly	old revision restored (2017/01/10 13:48)	1484074102	1727
+1484075040	84.194.206.190	E	format:shops_rel	wilhuf			-34

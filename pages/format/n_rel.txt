@@ -12,6 +12,15 @@ Special thanks to Schthack for figuring most of this format out. See his [[:form
 
 FIXME figure out the details of texturing and animation
 
+===== Vector =====
+
+Fixed-size structure of 12 bytes used throughout the format.
+
+^Offset^Size^Type^Name^Value|
+|0|4|f32|x| |
+|4|4|f32|y| |
+|8|4|f32|z| |
+
 ===== Main Block =====
 
 Fixed-size structure of 24 bytes, located at main_block_offset.
