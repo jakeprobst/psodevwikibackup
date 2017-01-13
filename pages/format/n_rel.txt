@@ -21,6 +21,16 @@ Fixed-size structure of 12 bytes used throughout the format.
 |4|4|f32|y| |
 |8|4|f32|z| |
 
+===== Color =====
+
+Fixed-size structure of 4 bytes used throughout the format.
+
+^Offset^Size^Type^Name^Value|
+|0|1|u8|r| Red component |
+|1|1|u8|g| Green component |
+|2|1|u8|b| Blue component |
+|3|1|u8|a| Alpha component |
+
 ===== Main Block =====
 
 Fixed-size structure of 24 bytes, located at main_block_offset.
@@ -46,7 +56,7 @@ Fixed-size structure of 52 bytes.
 
 ^Offset^Size^Type^Name^Value|
 |0|4|i32|section_id|Can be -1|
-|4|12|Vector|position|Positions the section in the world|
+|4|12|[[:format:n_rel#vector|Vector]]|position|Positions the section in the world|
 |16|4|unknown|unknown|unknown|
 |20|4|u32|y_axis_rotation|Divide by 65536 and multiply by 2 pi to get radials|
 |24|4|u32?|unknown|unknown|
@@ -125,16 +135,16 @@ FIXME figure out the different vertex types
 Fixed-size structure of 16 bytes.
 
 ^Offset^Size^Type^Name^Value|
-|0|12|[[:format:rel#vector|Vector]]|position| |
-|12|4|u32|color|Diffuse color, exact format unknown|
+|0|12|[[:format:n_rel#vector|Vector]]|position| |
+|12|4|[[:format:n_rel#color|Color]]|color|Diffuse color|
 
 ==== Vertex Type 2 ====
 
 Fixed-size structure of 24 bytes.
 
 ^Offset^Size^Type^Name^Value|
-|0|12|[[:format:rel#vector|Vector]]|position| |
-|12|4|u32|color|Diffuse color, exact format unknown|
+|0|12|[[:format:n_rel#vector|Vector]]|position| |
+|12|4|[[:format:n_rel#color|Color]]|color|Diffuse color|
 |16|4|f32|texture_u|Texture u coordinate|
 |20|4|f32|texture_v|Texture v coordinate|
 
@@ -143,18 +153,18 @@ Fixed-size structure of 24 bytes.
 Fixed-size structure of 28 bytes.
 
 ^Offset^Size^Type^Name^Value|
-|0|12|[[:format:rel#vector|Vector]]|position| |
-|12|12|[[:format:rel#vector|Vector]]|normal|Surface normal vector|
-|24|4|u32|color|Diffuse color, exact format unknown|
+|0|12|[[:format:n_rel#vector|Vector]]|position| |
+|12|12|[[:format:n_rel#vector|Vector]]|normal|Surface normal vector|
+|24|4|[[:format:n_rel#color|Color]]|color|Diffuse color|
 
 ==== Vertex Type 4 ====
 
 Fixed-size structure of 36 bytes.
 
 ^Offset^Size^Type^Name^Value|
-|0|12|[[:format:rel#vector|Vector]]|position| |
-|12|12|[[:format:rel#vector|Vector]]|normal|Surface normal vector|
-|24|4|u32|color|Diffuse color, exact format unknown|
+|0|12|[[:format:n_rel#vector|Vector]]|position| |
+|12|12|[[:format:n_rel#vector|Vector]]|normal|Surface normal vector|
+|24|4|[[:format:n_rel#color|Color]]|color|Diffuse color|
 |28|4|f32|texture_u|Texture u coordinate|
 |32|4|f32|texture_v|Texture v coordinate|
 
