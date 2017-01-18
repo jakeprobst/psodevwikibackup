@@ -1,11 +1,3 @@
-1484033580	201.197.122.38	C	format:rel_shops	soly	created, will add info in a bit		13
-1484033641	201.197.122.38	D	format:rel_shops	soly	removed		-13
-1484034191	201.197.122.38	C	shops_configuration	soly	created page and added some information, missing links		878
-1484034248	201.197.122.38	e	shops_configuration	soly	reworded psobb statement		-5
-1484035543	201.197.122.38	C	shops_configuration_armor	soly	created, added structs, need to arrange the extra information a bit better		1720
-1484035740	201.197.122.38	C	shops_configuration_tool	soly	created, added structs, need to rearrange information		3562
-1484036012	201.197.122.38	C	shops_configuration_weapon	soly	created, added everything in a single code block, will fix that later		5137
-1484036077	201.197.122.38	e	shops_configuration	soly	added links to structs		100
 1484071839	84.194.206.190	E	format:rel	wilhuf			37
 1484072079	201.197.122.38	C	format:shops_rel	soly	created, copied from old page http://sharnoth.com/psodevwiki/doku.php?id=shops_configuration		799
 1484072191	201.197.122.38	C	format:shops_rel:armor	soly	created, copied amor data from old page		1721
