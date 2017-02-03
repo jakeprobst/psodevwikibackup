@@ -856,3 +856,123 @@ Note: same format and usage as C1 command
 
 ED - modify account data (client->server) (BB)
 EE - scrolling message (server->client) (BB)
+
+===== PC/Blue Burst Patch Server Protocol =====
+----
+
+The type (or command) of each packet is in parenthesis next to the name in each table. All headers are in the following format and padded to a multiple of 4 bytes (the length of the header):
+^   PC Header   ^^
+^ Field ^ Size ^
+| Size | 2 bytes |
+| Type | 2 bytes |
+
+^   Welcome (0x0200)   ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Copyright | 44 bytes | Patch Server. Copyright SonicTeam, LTD. 2001 (UTF16-LE) |
+| Padding | 20 bytes | 0x00 |
+| Server Vector | 4 bytes | Random 4 bytes for the server's encryption vector |
+| Client Vector | 4 bytes | Random 4 bytes for the client's encryption vector |
+
+^  Welcome Acknowledgement (0x0200)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | 0x040002 (sent by the client) |
+
+^  Welcome Acknowledgement / Request for Login (0x0400)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | 0x040004 |
+
+^  Patch Login (0x0400)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Padding | 8 bytes | 0x00 |
+| Username | 16 bytes | ASCII string |
+| Password | 16 bytes | ASCII string |
+| Padding? | 60 bytes | 0x00 |
+
+^  Patch Welcome Message (0x0400)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Message | X bytes | Whatever message will be displayed on the patch screen (UTF16-LE) |
+
+^  Patch Redirect (0x1400)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| IP of DATA server | 4 bytes | IPv4 Address |
+| Port on DATA server to which to connect | 2 bytes | |
+| Padding | 2 bytes | 0x00 |
+
+^  Data Login Ack / Start File List  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | 0x04000B00 |
+
+^  Change Directory (0x0900) ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Directory Name | 64 bytes | ASCII string |
+
+^  Change Directory Above (cd ..) (0x0A00)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | 0x04000A00 |
+
+^  File Verification Request (0x0C00)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Patch ID | 4 bytes | Integer ID by which to represent the file later |
+| Filename | 32 bytes | Filename in the cwd to verify |
+
+^  File List Done (0x0D00)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | 0x04000D00 |
+
+^  File Status (0x0F00)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Patch ID | 4 bytes | ID corresponding to 0x0C |
+| Checksum | 4 bytes | MD5 checksum of the file |
+| File Size | 4 bytes | Size of the file |
+
+^  Client File List Done (0x1000)  ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | 0x04001000 |
+
+^  Files Need Update (0x1100)   ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Total Size of Files to Update | 4 bytes | |
+| Number of files to Update | 4 bytes | |
+
+^  File Info (0x0600)   ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Padding | 4 bytes | 0x00 |
+| File Size | 4 bytes | |
+| Filename | 48 bytes | ASCII filename |
+
+^  File Chunk (0x0700)   ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | |
+| Chunk Number | 4 bytes | |
+| Chunk Checksum | 4 bytes | MD5 checksum of the file |
+| Data size | 4 bytes | |
+| Data | Maximum of 0x60000 bytes | Data of the file |
+
+^  File Complete (0x0800)   ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | 0x04000800 |
+
+^  File Update List Complete (0x1200)   ^^^
+^ Field  ^ Length ^ Value ^
+| Header | 4 bytes | 0x04001200 |
+
+===== Blue Burst Login/Character Server Protocol =====
+----
+
+The type (or command) of each packet is in parenthesis next to the name in each table. All headers are in the following format and padded to a multiple of 8 bytes (the length of the header):
+^   BB Header   ^^
+^ Field ^ Size ^
+| Size | 2 bytes |
+| Type | 2 bytes |
+| Flags | 4 bytes |
+
+TODO

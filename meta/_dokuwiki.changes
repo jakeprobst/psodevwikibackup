@@ -18,3 +18,10 @@
 1484790740	201.197.122.38	e	format:bin	soly	renaming struct members		-12
 1485686771	84.194.206.190	E	format:bin	wilhuf	[Object Code] 		54
 1485704879	84.194.206.190	R	format:bin	wilhuf	old revision restored (2017/01/18 20:52)	1484790740	-54
+1486019900	104.238.32.180	E	net:messages	xenon	[Message Layouts] 		1131
+1486020163	104.238.32.180	E	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		402
+1486021174	104.238.32.180	E	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		1781
+1486021195	104.238.32.180	e	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		8
+1486021207	104.238.32.180	e	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		2
+1486021318	104.238.32.180	E	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		356
+1486021330	104.238.32.180	e	net:messages	xenon	[PC/Blue Burst Login/Character Server Protocol] 		-3
