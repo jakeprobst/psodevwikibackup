@@ -33,23 +33,35 @@ Blue Burst uses an 8-byte instead of a 4-byte header.
 
 FIXME This section needs cleanup.
 
-01 - lobby message box (server->client) (all versions)
-DC/GC: 01 00 SS SS 00 00 00 00 00 00 00 00 <message as text>
-PC:    SS SS 01 00 00 00 00 00 00 00 00 00 <message as Unicode text>
-BB:    SS SS 01 00 00 00 00 00 00 00 00 00 00 00 00 00 <message as Unicode text>
+==== 01 - lobby message box ====
+Direction: **server->client**\\ Platform: **all**
 
+<code>
+GC: 01 00 SS SS 00 00 00 00 00 00 00 00 <message as text>
+PC: SS SS 01 00 00 00 00 00 00 00 00 00 <message as Unicode text>
+BB: SS SS 01 00 00 00 00 00 00 00 00 00 00 00 00 00 <message as Unicode text>
+</code>
+==== 02 - initialize encryption ====
+Direction: **server->client**\\
+Platform: **DC?/GC**
 
-02 - initialize encryption (server->client) (DC?, GC)
+<code>
 02 00 4C 00 44 72 65 61 6D 43 61 73 74 20 4C 6F
 62 62 79 20 53 65 72 76 65 72 2E 20 43 6F 70 79
 72 69 67 68 74 20 53 45 47 41 20 45 6E 74 65 72
 70 72 69 73 65 73 2E 20 31 39 39 39 00 00 00 00
 00 00 00 00 SS SS SS SS CC CC CC CC
-(C = client key, S = server key)
+</code>
+
+(C = client key, S = server key)\\
 Note: client will respond with either a 9A, 9D, or 9E command
 
 
-03 - initialize encryption and check license (server->client) (BB)
+==== 03 - initialize encryption and check license ====
+Direction: **server->client**\\
+Platform: **BB**
+
+<code>
 C8 00 03 00 00 00 00 00 50 68 61 6E 74 61 73 79
 20 53 74 61 72 20 4F 6E 6C 69 6E 65 20 42 6C 75
 65 20 42 75 72 73 74 20 47 61 6D 65 20 53 65 72
@@ -63,7 +75,9 @@ SS SS SS SS SS SS SS SS CC CC CC CC CC CC CC CC
 CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
 CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
 CC CC CC CC CC CC CC CC
-(C = client key, S = server key)
+</code>
+
+(C = client key, S = server key)\\
 Note: client will respond with a 93 command
 
 
@@ -477,8 +491,23 @@ BB server->client:    SS SS 8A 00 00 00 00 00 <room name as unicode>
 Note: server should respond to 8A with another 8A command
 
 
-93 - license check / log in (client->server) (BB)
-Note: format not fully known
+==== 93 - license check / log in ====
+Direction: **client->server**\\
+Platform: **BB**
+
+<code>
+SS SS 93 00 FF FF FF FF ?? ?? ?? GG GG ?? ??
+?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ??
+?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ??
+?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ??
+?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ??
+?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ??
+?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ??
+?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ??
+?? ?? ?? HH HH HH HH ...
+</code>
+
+(G = guildcard, H = hardware info, ? = unknown)
 
 
 96 - client checksum (client->server) (DC?, PC?, GC)

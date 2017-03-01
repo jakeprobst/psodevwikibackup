@@ -7,3 +7,8 @@
 1486021207	104.238.32.180	e	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		2
 1486021318	104.238.32.180	E	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		356
 1486021330	104.238.32.180	e	net:messages	xenon	[PC/Blue Burst Login/Character Server Protocol] 		-3
+1488331007	67.161.8.229	e	net:messages	gatchi	[Message Layouts] starting to format things so they look nice		565
+1488331248	67.161.8.229	E	net:messages	gatchi	[01 - lobby message box] 		-11
+1488331301	67.161.8.229	E	net:messages	gatchi	[02 - initialize encryption] 		11
+1488331398	67.161.8.229	E	net:messages	gatchi	[03 - initialize encryption and check license] 		11
+1488331448	67.161.8.229	E	net:messages	gatchi	[93 - license check / log in] 		26
