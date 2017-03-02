@@ -12,3 +12,6 @@
 1488331301	67.161.8.229	E	net:messages	gatchi	[02 - initialize encryption] 		11
 1488331398	67.161.8.229	E	net:messages	gatchi	[03 - initialize encryption and check license] 		11
 1488331448	67.161.8.229	E	net:messages	gatchi	[93 - license check / log in] 		26
+1488396736	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] formatted into a nice table		184
+1488397380	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] fixed column heading on table		-11
+1488424333	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] reformatting of packet 08 explanation		517

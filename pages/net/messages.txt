@@ -57,24 +57,26 @@ Platform: **DC?/GC**
 Note: client will respond with either a 9A, 9D, or 9E command
 
 
-==== 03 - initialize encryption and check license ====
+==== 03 - Initialize Encryption and Check License ====
 Direction: **server->client**\\
 Platform: **BB**
 
 <code>
-C8 00 03 00 00 00 00 00 50 68 61 6E 74 61 73 79
-20 53 74 61 72 20 4F 6E 6C 69 6E 65 20 42 6C 75
-65 20 42 75 72 73 74 20 47 61 6D 65 20 53 65 72
-76 65 72 2E 20 43 6F 70 79 72 69 67 68 74 20 31
-39 39 39 2D 32 30 30 34 20 53 4F 4E 49 43 54 45
-41 4D 2E 00 00 00 00 00 00 00 00 00 00 00 00 00
-00 00 00 00 00 00 00 00 SS SS SS SS SS SS SS SS
-SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
-SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
-SS SS SS SS SS SS SS SS CC CC CC CC CC CC CC CC
-CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
-CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
-CC CC CC CC CC CC CC CC
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    ------------------------------------------------
+00 | C8 00 03 00 00 00 00 00 50 68 61 6E 74 61 73 79
+10 | 20 53 74 61 72 20 4F 6E 6C 69 6E 65 20 42 6C 75
+20 | 65 20 42 75 72 73 74 20 47 61 6D 65 20 53 65 72
+30 | 76 65 72 2E 20 43 6F 70 79 72 69 67 68 74 20 31
+40 | 39 39 39 2D 32 30 30 34 20 53 4F 4E 49 43 54 45
+50 | 41 4D 2E 00 00 00 00 00 00 00 00 00 00 00 00 00
+60 | 00 00 00 00 00 00 00 00 SS SS SS SS SS SS SS SS
+70 | SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
+80 | SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
+90 | SS SS SS SS SS SS SS SS CC CC CC CC CC CC CC CC 
+A0 | SS SS CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+B0 | CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC CC
+C0 | CC CC CC CC CC CC CC CC 
 </code>
 
 (C = client key, S = server key)\\
@@ -139,31 +141,50 @@ Note: R field becomes ship name when player joins a lobby
 Note: client will respond with either an 09 or 10 command
 
 
-08 - Team Select / Game Select (server->client) (all versions)
-Note: DC format unknown
-PC:
-SS SS 08 NN MM MM MM MM XX XX XX XX 00 00 RR RR
-RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
-TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
-TT TT TT TT TT TT TT TT TT TT II JJ]
-GC:
-08 NN SS SS MM MM MM MM XX XX XX XX 00 00 RR RR
-RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
-TT TT TT TT TT TT TT TT TT TT KK JJ]
-BB:
-SS SS 08  00 NN 00 00 00 MM MM MM MM XX XX XX XX
-00 00 RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-RR RR RR RR [MM MM MM MM YY YY YY YY GG HH TT TT
-TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
-TT TT TT TT TT TT TT TT TT TT TT TT TT TT II JJ]
+==== 08 - Team Select / Game Select ====
+Direction: **server->client**\\
+Platform: **all**\\
+//Note: DC format unknown//
+
+=== PC ===
+<code>
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    ------------------------------------------------
+00 | SS SS 08 NN MM MM MM MM XX XX XX XX 00 00 RR RR
+01 | RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+02 | RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+03 |[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
+04 | TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+05 | TT TT TT TT TT TT TT TT TT TT II JJ]
+</code>
+
+=== GC ===
+<code>
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    ------------------------------------------------
+00 | 08 NN SS SS MM MM MM MM XX XX XX XX 00 00 RR RR
+01 | RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+02 |[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
+03 | TT TT TT TT TT TT TT TT TT TT KK JJ]
+</code>
+
+=== BB ===
+<code>
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    ------------------------------------------------
+00 | SS SS 08 00 NN 00 00 00 MM MM MM MM XX XX XX XX
+01 | 00 00 RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+02 | RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+03 | RR RR RR RR[MM MM MM MM YY YY YY YY GG HH TT TT
+04 | TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+05 | TT TT TT TT TT TT TT TT TT TT TT TT TT TT II JJ]
+</code>
+
 (S = size, N = number of teams, M = menu ID, X = title ID (unused), R = menu title (unused), Y = item ID, G = difficulty (Normal: 22, Hard: 23, V Hard: 24, Ultimate: 25, Ep3 game: 0A), H = number of players, I = episode (Ep1: 40, Ep2: 41, Ep4: 43, Ep3: ignored), J = flags (add together; battle: 10, challenge: 20, locked: 02, disabled (BB): 04), K = GC flags (add together; episode 2: 80, episode 1: 40, challenge: 20, battle: 10, locked: 02))
-Note: text in PC and BB (fields R and T) are in Unicode; on GC, they're ANSI
-Note: bracketed section repeats (N) times
-Note: client will respond with either an 09 or 10 command
+
+//Note: text in PC and BB (fields R and T) are in Unicode; on GC, they're ANSI// \\
+//Note: bracketed section repeats (N) times// \\
+//Note: client will respond with either an 09 or 10 command//
 
 
 09 - menu item info (client->server) (all versions)
