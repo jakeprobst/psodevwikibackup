@@ -1,4 +1,3 @@
-1484788302	108.196.97.216	E	format:bin	jake			44
 1484790465	201.197.122.38	e	format:bin	soly	Typo		-2
 1484790740	201.197.122.38	e	format:bin	soly	renaming struct members		-12
 1485686771	84.194.206.190	E	format:bin	wilhuf	[Object Code] 		54
@@ -18,3 +17,5 @@
 1488396736	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] formatted into a nice table		184
 1488397380	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] fixed column heading on table		-11
 1488424333	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] reformatting of packet 08 explanation		517
+1488533171	67.161.8.229	E	net:messages	gatchi	[93 - license check / log in] added info to p93		204
+1488589731	67.161.8.229	E	net:messages	gatchi	[93 - License Check / Log In] updated guildcard size		0
