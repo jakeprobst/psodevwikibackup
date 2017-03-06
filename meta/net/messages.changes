@@ -17,3 +17,4 @@
 1488424333	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] reformatting of packet 08 explanation		517
 1488533171	67.161.8.229	E	net:messages	gatchi	[93 - license check / log in] added info to p93		204
 1488589731	67.161.8.229	E	net:messages	gatchi	[93 - License Check / Log In] updated guildcard size		0
+1488768991	67.161.8.229	e	net:messages	gatchi	[02 - initialize encryption] adding row and col markings for readability		131
