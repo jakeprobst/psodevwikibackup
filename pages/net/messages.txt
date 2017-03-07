@@ -33,7 +33,7 @@ Blue Burst uses an 8-byte instead of a 4-byte header.
 
 FIXME This section needs cleanup.
 
-==== 01 - lobby message box ====
+==== 01 - Lobby Message Box ====
 Direction: **server->client**\\ Platform: **all**
 
 <code>
@@ -85,62 +85,99 @@ C0 | CC CC CC CC CC CC CC CC
 Note: client will respond with a 93 command
 
 
-04 - set security data / guild card number (server->client) (DC?, PC, GC)
-PC:
-2C 00 04 00 00 01 00 00 GG GG GG GG SS SS SS SS
-SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
-SS SS SS SS SS SS SS SS SS SS SS SS
-DC/GC:
-04 00 2C 00 00 01 00 00 GG GG GG GG SS SS SS SS
-SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
-SS SS SS SS SS SS SS SS SS SS SS SS
+==== 04 - Set Security Data / Guild Card Number ====
+Direction: **server->client** \\
+Platforms: **DC?, PC, GC**
+
+=== PC ===
+<code>
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    ------------------------------------------------
+00 | 2C 00 04 00 00 01 00 00 GG GG GG GG SS SS SS SS
+01 | SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
+02 | SS SS SS SS SS SS SS SS SS SS SS SS
+</code>
+
+== DC/GC ==
+<code>
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    ------------------------------------------------
+00 | 04 00 2C 00 00 01 00 00 GG GG GG GG SS SS SS SS
+01 | SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS SS
+02 | SS SS SS SS SS SS SS SS SS SS SS SS
+</code>
+
 (G = guild card number, S = security data)
-Note: client will respond with a 96 command only for the first 04 it receives
+//Note: client will respond with a 96 command only for the first 04 it receives//
 
 
-05 - disconnect (client->server) (all versions)
+==== 05 - Disconnect ====
+Direction: **client->server**\\
+Platform: **all**
+<code>
 DC/GC: 05 00 04 00
 PC:    04 00 05 00
 BB:    08 00 05 00 00 00 00 00
+</code>
 
 
-06 - chat (bidirectional) (all versions)
+==== 06 - Chat ====
+Direction: **bidirectional**\\
+Platform: **all**
+<code>
 DC/GC Client->Server: 06 00 SS SS 00 00 00 00 00 00 00 00 <message>
 DC/GC Server->Client: 06 00 SS SS 00 01 00 00 GG GG GG GG <player name> 09 <message>
 PC Client->Server:    06 00 SS SS 00 00 00 00 00 00 00 00 <message as Unicode>
 PC Server->Client:    06 00 SS SS 00 01 00 00 GG GG GG GG <player name as Unicode> 09 00 <message as Unicode>
 BB Client->Server:    SS SS 06 00 00 00 00 00 00 00 00 00 00 00 00 00 <message as Unicode>
 BB Server->Client:    SS SS 06 00 00 00 00 00 00 01 00 00 GG GG GG GG <player name as Unicode> 09 00 <message as Unicode>
+</code>
+
 (G = Guild Card number of player who sent message)
-Note: when a client sends an 06 command, the server broadcasts a chat command to all players in the same game/lobby
+//Note: when a client sends an 06 command, the server broadcasts a chat command to all players in the same game/lobby//
 
 
-07 - Ship Select (server->client) (all versions)
-Note: DC format unknown; it's likely to be the same as the GC format
-PC:
-SS SS 07 NN MM MM MM MM XX XX XX XX 04 0F RR RR
-RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-[MM MM MM MM YY YY YY YY 04 0F TT TT TT TT TT TT
-TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
-TT TT TT TT TT TT TT TT TT TT TT TT]
-GC:
-07 NN SS SS MM MM MM MM XX XX XX XX 04 0F RR RR
-RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-[MM MM MM MM YY YY YY YY 04 0F TT TT TT TT TT TT
-TT TT TT TT TT TT TT TT TT TT TT TT]
-BB:
-SS SS 07 00 NN 00 00 00 MM MM MM MM XX XX XX XX
-04 00 RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-RR RR RR RR [MM MM MM MM YY YY YY YY 04 00 TT TT
-TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
-TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT]
+==== 07 - Ship Select ====
+Direction: **server->client**\\
+Platform: **all**\\
+//Note: DC format unknown; it's likely to be the same as the GC format//
+== PC ==
+<code>
+      00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    -------------------------------------------------
+00 |  SS SS 07 NN MM MM MM MM XX XX XX XX 04 0F RR RR
+01 |  RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+02 |  RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+03 | [MM MM MM MM YY YY YY YY 04 0F TT TT TT TT TT TT
+04 |  TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+05 |  TT TT TT TT TT TT TT TT TT TT TT TT]
+</code>
+== GC ==
+<code>
+      00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    -------------------------------------------------
+00 |  07 NN SS SS MM MM MM MM XX XX XX XX 04 0F RR RR
+01 |  RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+02 | [MM MM MM MM YY YY YY YY 04 0F TT TT TT TT TT TT
+03 |  TT TT TT TT TT TT TT TT TT TT TT TT]
+</code>
+== BB ==
+<code>
+      00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    -------------------------------------------------
+00 |  SS SS 07 00 NN 00 00 00 MM MM MM MM XX XX XX XX
+01 |  04 00 RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+02 |  RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+03 |  RR RR RR RR[MM MM MM MM YY YY YY YY 04 00 TT TT
+04 |  TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
+05 |  TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT]
+</code>
 (S = size, N = number of items, M = menu ID, X = title ID (unused), R = menu title, Y = item ID, T = item text)
-Note: text in PC and BB (fields R and T) are in Unicode; on GC, they're ANSI
-Note: bracketed section repeats (N) times
-Note: R field becomes ship name when player joins a lobby
-Note: client will respond with either an 09 or 10 command
+
+//Note: text in PC and BB (fields R and T) are in Unicode; on GC, they're ANSI//\\
+//Note: bracketed section repeats (N) times//\\
+//Note: R field becomes ship name when player joins a lobby//\\
+//Note: client will respond with either an 09 or 10 command//\\
 
 
 ==== 08 - Team Select / Game Select ====

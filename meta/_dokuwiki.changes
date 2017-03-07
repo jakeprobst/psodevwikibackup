@@ -1,7 +1,3 @@
-1485704879	84.194.206.190	R	format:bin	wilhuf	old revision restored (2017/01/18 20:52)	1484790740	-54
-1486019900	104.238.32.180	E	net:messages	xenon	[Message Layouts] 		1131
-1486020163	104.238.32.180	E	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		402
-1486021174	104.238.32.180	E	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		1781
 1486021195	104.238.32.180	e	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		8
 1486021207	104.238.32.180	e	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		2
 1486021318	104.238.32.180	E	net:messages	xenon	[PC/Blue Burst Patch Server Protocol] 		356
@@ -19,3 +15,6 @@
 1488615925	201.197.122.38	e	format:dat	soly	Adding note to unknown chunks 4 and 5, which appear only in challenge mode.		34
 1488617711	201.197.122.38	e	format:dat	soly	Added structs for Unknown4		636
 1488768991	67.161.8.229	e	net:messages	gatchi	[02 - initialize encryption] adding row and col markings for readability		131
+1488778976	67.161.8.229	E	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		449
+1488779007	67.161.8.229	e	net:messages	gatchi	[01 - lobby message box] 		0
+1488785030	67.161.8.229	e	net:messages	gatchi	[04 - set security data / guild card number] 		508
