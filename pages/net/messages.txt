@@ -184,17 +184,38 @@ Platform: **all**\\
 Direction: **server->client**\\
 Platform: **all** //(Note: DC format unknown)//\\
 Key:\\
-**S** = size,\\
-**N** = number of teams,\\
-**M** = menu ID, \\
-**X** = title ID (unused), \\
-**R** = menu title (unused), \\
-**Y** = item ID, \\
-**G** = difficulty (Normal: 22, Hard: 23, V Hard: 24, Ultimate: 25, Ep3 game: 0A), \\
-**H** = number of players, \\
-**I** = episode (Ep1: 40, Ep2: 41, Ep4: 43, Ep3: ignored), \\
-**J** = flags (add together; battle: 10, challenge: 20, locked: 02, disabled (BB): 04), \\
-**K** = GC flags (add together; episode 2: 80, episode 1: 40, challenge: 20, battle: 10, locked: 02)
+^Abbr	^Type			^Console	^PC	^BB	^Size	^Notes		|
+|**N**	|number of teams	|0x01		|0x03	|0x04	|1 byte	|		|
+|**M**	|menu ID		|0x04		|0x04	|0x08	|4	|		|
+|**X**	|title ID		|0x08		|0x08	|0x0C	|4	|unused		|
+|**R**	|menu title		|0x0E		|0x0E	|0x02	|18/20	|unused		|
+|**Y**	|item ID		|0x24		|0x34	|0x38	|4	|		|
+|**G**	|difficulty		|0x28		|0x38	|0x3C	|1	|see below	|
+|**H**	|number of players	|0x29		|0x39	|0X3D	|1	|		|
+|**I**	|episode		|n/a		|0x5A	|0x5E	|1	|see below	|
+|**J**	|flags			|0x3B		|0x5B	|0x5F	|1	|see below	|
+|**K**	|GC flags		|0x3A		|N/A	|N/A	|1	|see below	|
+
+^Abbr	^Type		^Normal	^Hard	^V Hard	^Ultimate	^Ep1	^Ep2	^Ep3	^Ep4	|
+|G	|difficulty	|22	|23	|24	|25		|n/a	|n/a	|0A	|n/a	|
+|I	|episode	|n/a	|n/a	|n/a	|n/a		|40	|41	|42	|43	|
+
+^Abbr 	^Type		^Battle	^Challenge	^Locked	^Ep1	^Ep2	^BB	|
+|J	|flags		|10	|20		|02	|n/a	|n/a	|04	|
+|K	|GC flags	|10	|20		|02	|40	|80	|n/a	|
+
+//Note:// text in PC and BB (fields R and T) are in Unicode; on GC, they're ANSI \\
+//Note:// bracketed section repeats (N) times \\
+
+=== GC ===
+<code>
+     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+    ------------------------------------------------
+00 | 08 NN SS SS MM MM MM MM XX XX XX XX 00 00 RR RR
+01 | RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
+02 |[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
+03 | TT TT TT TT TT TT TT TT TT TT KK JJ]
+</code>
 
 === PC ===
 <code>
@@ -206,16 +227,6 @@ Key:\\
 03 |[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
 04 | TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT TT
 05 | TT TT TT TT TT TT TT TT TT TT II JJ]
-</code>
-
-=== GC ===
-<code>
-     00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
-    ------------------------------------------------
-00 | 08 NN SS SS MM MM MM MM XX XX XX XX 00 00 RR RR
-01 | RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR RR
-02 |[MM MM MM MM YY YY YY YY GG HH TT TT TT TT TT TT
-03 | TT TT TT TT TT TT TT TT TT TT KK JJ]
 </code>
 
 === BB ===
@@ -230,8 +241,6 @@ Key:\\
 05 | TT TT TT TT TT TT TT TT TT TT TT TT TT TT II JJ]
 </code>
 
-//Note:// text in PC and BB (fields R and T) are in Unicode; on GC, they're ANSI \\
-//Note:// bracketed section repeats (N) times \\
 //Note:// client will respond with either an 09 or 10 command
 
 
@@ -270,9 +279,9 @@ Note: same format as 02 command
 Note: client will respond with a DB command
 
 
-==== #19: Reconnect ====
+==== #19: Reconnect / Redirect ====
 Direction: **server->client**\\
-Platform: **all***\\
+Platform: **all**\\
 (I = IP address, P = port)
 <code>
 DC/GC: 19 00 0C 00 II II II II PP PP 00 00

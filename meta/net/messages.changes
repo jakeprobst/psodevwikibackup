@@ -22,3 +22,8 @@
 1488779007	67.161.8.229	e	net:messages	gatchi	[01 - lobby message box] 		0
 1488785030	67.161.8.229	e	net:messages	gatchi	[04 - set security data / guild card number] 		508
 1488937394	67.161.8.229	e	net:messages	gatchi	[08 - Team Select / Game Select] 		240
+1488955212	67.161.8.229	e	net:messages	gatchi	[#08: Team Select / Game Select] 		0
+1488957599	67.161.8.229	e	net:messages	gatchi	[#08: Team Select / Game Select] 		357
+1488957636	67.161.8.229	e	net:messages	gatchi	[#19: Reconnect] 		9
+1488957653	67.161.8.229	E	net:messages	gatchi	[#19: Reconnect/Redirect] 		2
+1488957669	67.161.8.229	e	net:messages	gatchi	[#19: Reconnect / Redirect] 		-1
