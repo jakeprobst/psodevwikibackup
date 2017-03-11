@@ -14,7 +14,7 @@
 [[:format:afs|AFS Archives (afs)]]\\
 [[:format:bin|Quest Meta Data and Object Code (bin)]]\\
 [[:format:dat|Quest Map Data (dat)]]\\
-[[:format:nj|Ninja Models (nj)]]\\
+[[:format:nj|Ninja (nj)]]\\
 [[:format:rel|REL]]\\
 [[:format:gsl|GSL Archive (gsl)]]\\
 [[:format:bml|BML Archive]]
