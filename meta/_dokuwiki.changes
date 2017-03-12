@@ -1,12 +1,3 @@
-1488331398	67.161.8.229	E	net:messages	gatchi	[03 - initialize encryption and check license] 		11
-1488331448	67.161.8.229	E	net:messages	gatchi	[93 - license check / log in] 		26
-1488396736	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] formatted into a nice table		184
-1488397380	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] fixed column heading on table		-11
-1488424333	67.161.8.229	e	net:messages	gatchi	[03 - initialize encryption and check license] reformatting of packet 08 explanation		517
-1488533171	67.161.8.229	E	net:messages	gatchi	[93 - license check / log in] added info to p93		204
-1488589731	67.161.8.229	E	net:messages	gatchi	[93 - License Check / Log In] updated guildcard size		0
-1488615925	201.197.122.38	e	format:dat	soly	Adding note to unknown chunks 4 and 5, which appear only in challenge mode.		34
-1488617711	201.197.122.38	e	format:dat	soly	Added structs for Unknown4		636
 1488768991	67.161.8.229	e	net:messages	gatchi	[02 - initialize encryption] adding row and col markings for readability		131
 1488778976	67.161.8.229	E	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		449
 1488779007	67.161.8.229	e	net:messages	gatchi	[01 - lobby message box] 		0
@@ -20,3 +11,19 @@
 1488957669	67.161.8.229	e	net:messages	gatchi	[#19: Reconnect / Redirect] 		-1
 1489164092	188.118.52.161	E	format:nj	wilhuf			1300
 1489180817	84.194.197.34	E	sidebar	wilhuf			-7
+1489242164	84.194.197.34	E	format:nj	wilhuf			1557
+1489242253	84.194.197.34	E	format:nj	wilhuf			-9
+1489242402	84.194.197.34	E	format:nj	wilhuf			0
+1489242865	84.194.197.34	E	format:nj	wilhuf			28
+1489242954	84.194.197.34	E	format:nj	wilhuf			3
+1489242974	84.194.197.34	E	format:nj	wilhuf			0
+1489247581	84.194.197.34	E	format:nj	wilhuf			1948
+1489247621	84.194.197.34	E	format:nj	wilhuf			0
+1489249132	84.194.197.34	E	format:nj	wilhuf			759
+1489249836	84.194.197.34	E	format:nj	wilhuf			626
+1489251562	84.194.197.34	E	format:nj	wilhuf			1573
+1489251608	84.194.197.34	E	format:nj	wilhuf			64
+1489251631	84.194.197.34	E	format:nj	wilhuf			12
+1489251835	84.194.197.34	E	format:nj	wilhuf	[Parsing the Ninja Chunk Model Format] 		0
+1489251919	84.194.197.34	E	format:nj	wilhuf	[Parsing the Ninja Chunk Model Format] 		-9
+1489255653	84.194.197.34	E	format:nj	wilhuf			93
