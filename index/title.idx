@@ -20,7 +20,7 @@ C REL File Format
 N REL File Format
 PSO map file format explained by Schthack
 PRS Compression
-Ninja File Format (.nj)
+Ninja File Format (.nj, .xj)
 AFS Archive
 BML Archive
 
@@ -41,3 +41,5 @@ Shops Configuration
 
 
 PlayGround
+XJ Model Format
+NJCM Model

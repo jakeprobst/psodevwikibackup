@@ -6,12 +6,11 @@
 |[[format:bml|BML]]|.bml|Archive format for [[compression:prs|PRS]] compressed files.|
 |[[format:dat|DAT]]|.dat|Quest map objects, spawns, waves|
 |[[format:gsl|GSL]]|.gsl|Archive format|
-|[[format:nj|Ninja]]|.nj|Model geometry|
+|[[format:nj|Ninja]]|.nj, .xj|Model geometry|
 |Ninja Motion|.njm|Model animation data|
 |[[format:qst|QST]]|.qst|Quest container format, contains a complete quest (DAT and BIN)|
 |[[format:rel|REL]]|.rel|Generic format|
 |TAM|.tam| |
-|XJ|.xj|Geometry|
 |XVM|.xvm|Archive format containing XVR textures.|
 
 \\

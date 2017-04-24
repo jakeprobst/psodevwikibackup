@@ -41,3 +41,5 @@ format:shops_rel:armor
 format:shops_rel:tool
 format:shops_rel:weapon
 playground:playground
+format:nj:xj_model
+format:nj:njcm_model
