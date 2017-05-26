@@ -27,3 +27,9 @@
 1488957636	67.161.8.229	e	net:messages	gatchi	[#19: Reconnect] 		9
 1488957653	67.161.8.229	E	net:messages	gatchi	[#19: Reconnect/Redirect] 		2
 1488957669	67.161.8.229	e	net:messages	gatchi	[#19: Reconnect / Redirect] 		-1
+1495693558	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		1305
+1495693598	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		0
+1495758879	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		16
+1495758904	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		2
+1495765480	67.161.8.229	E	net:messages	gatchi	added BB packet02 (patch hello packet)		726
+1495765625	67.161.8.229	e	net:messages	gatchi	[02 - Patch Hello] 		2
