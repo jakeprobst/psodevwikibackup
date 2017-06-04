@@ -1,1 +1,4 @@
 1481823894	84.194.206.190	C	net:message_flow	wilhuf	created		1430
+1496462521	67.161.8.229	E	net:message_flow	gatchi			65
+1496471657	67.161.8.229	E	net:message_flow	gatchi	correction on send 14		-32
+1496515441	67.161.8.229	E	net:message_flow	gatchi	fixed patch order, clarified when data connection happens		170

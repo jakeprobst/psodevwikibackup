@@ -33,3 +33,8 @@
 1495758904	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		2
 1495765480	67.161.8.229	E	net:messages	gatchi	added BB packet02 (patch hello packet)		726
 1495765625	67.161.8.229	e	net:messages	gatchi	[02 - Patch Hello] 		2
+1496462943	67.161.8.229	e	net:messages	gatchi	[#08: Team Select / Game Select] 		53
+1496463125	67.161.8.229	E	net:messages	gatchi	[#08: Team Select / Game Select] 		217
+1496463273	67.161.8.229	E	net:messages	gatchi	[#08: Team Select / Game Select] wrong heading levels on 13 and 14		4
+1496463335	67.161.8.229	e	net:messages	gatchi	[#08: Team Select / Game Select] cosmetic		0
+1496471914	67.161.8.229	E	net:messages	gatchi	[14 - No Patches Needed] updated info		63

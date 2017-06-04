@@ -218,7 +218,7 @@ Platform: **all**\\
 //Note: client will respond with either an 09 or 10 command//\\
 
 
-==== #08: Team Select / Game Select ====
+==== 08 - Team Select / Game Select ====
 Direction: **server->client**\\
 Platform: **all** //(Note: DC format unknown)//\\
 Key:\\
@@ -307,13 +307,24 @@ PC:    SS SS 11 7E 00 F0 FF BF 40 F2 FF BF <message as Unicode>
 BB:    SS SS 11 00 00 00 00 00 00 00 00 00 00 00 00 00 <message as Unicode>
 
 
-13 - continue sending quest file (bidirectional) (all versions)
-13 00 18 04 <0x400 byte buffer> SS SS SS SS
+==== 13 - Continue Sending Quest File ====
+Direction: **server<->client** \\
+Versions: **DC PC GC** BB \\
+<code>13 00 18 04 <0x400 byte buffer> SS SS SS SS</code>
 (S = size of data in buffer (Max. 0x400))
 
+==== 14 - Redirect ====
+Direction: **server->client**\\
+Versions: DC PC GC **BB**\\
+Size: 12 bytes\\
+Notes: Only sent from patch server.  Login and ship use 19.
+<code>0C 00 14 00 II II II II PP PP 00 00</code>
+(I = IP address, P = Port)
 
-17 - initialize encryption and check license (server->client) (PC, GC)
-Note: same format as 02 command
+==== 17- Initialize encryption and check license ====
+Direction: **server->client**\\
+Versions: DC **PC GC** BB\\
+Note: same format as 02 command\\
 Note: client will respond with a DB command
 
 

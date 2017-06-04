@@ -6,6 +6,9 @@
     - Server sends 04 - login
     - Client sends 04 - login
     - Server sends 13 - welcome message
+    - Server sends 14 - redirect
+    - Server disconnects (client disconnects on its own if server doesn’t)
+  - Client connects to data server at port specified by patch server (if patching is needed)
     - Server sends 0B - patch list start
     - Server sends 0D - patch list end
     - Client sends 10 - patch list done
