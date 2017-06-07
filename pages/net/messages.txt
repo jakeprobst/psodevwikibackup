@@ -80,9 +80,9 @@ Direction: **server->client**\\
 Platform: **BB**\\
 Size: 200 bytes
 
-^Abbr	^Type		^Location	^
-|SS	|server key	|0x68		|
-|CC	|client key	|0x98		|
+^Abbr	^Type		^Start		^Last		^Length	|
+|SS	|server key	|0x68/104	|0x97/151	|48	|
+|CC	|client key	|0x98/152	|0xC7/199	|48	|
 
 <code>
      00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
