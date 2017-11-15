@@ -1,10 +1,3 @@
-1492965144	84.194.197.34	E	format:nj:xj_model	wilhuf			1285
-1495693558	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		1305
-1495693598	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		0
-1495758879	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		16
-1495758904	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		2
-1495765480	67.161.8.229	E	net:messages	gatchi	added BB packet02 (patch hello packet)		726
-1495765625	67.161.8.229	e	net:messages	gatchi	[02 - Patch Hello] 		2
 1496462521	67.161.8.229	E	net:message_flow	gatchi			65
 1496462943	67.161.8.229	e	net:messages	gatchi	[#08: Team Select / Game Select] 		53
 1496463125	67.161.8.229	E	net:messages	gatchi	[#08: Team Select / Game Select] 		217
@@ -18,5 +11,10 @@
 1497970840	50.224.10.154	e	format:bin	lemonilla	s or S key is a string		9
 1498259637	99.57.175.76	E	client	lemonilla	added register pointer		45
 1500305905	50.224.10.154	E	client:assets:area_mappings	lemonilla	Added Ep1 Data.  I'll fill in map variants when I get home and have those in front of me.		868
+1503512782	127.0.0.1	E	playground:playground		external edit		25
 1510632869	74.83.65.238	E	format:bin	lemonilla	[Parameter Types and Modifiers] 		119
 1510632940	74.83.65.238	E	format:bin	lemonilla	[Parameter Types and Modifiers] 		2
+1510673762	205.133.161.71	E	playground:playground	lemonilla			530
+1510682894	198.30.60.35	E	playground:playground	lemonilla			-533
+1510685076	198.30.60.35	E	client:assets:area_mappings	lemonilla	Added ep4		528
+1510685173	198.30.60.35	e	client:assets:area_mappings	lemonilla	[Episode 1] 		10
