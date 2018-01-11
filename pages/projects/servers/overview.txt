@@ -22,6 +22,7 @@ Main language: C++\\
 
 The mother of all servers, written by Schthack.\\
 Main language: Delphi\\
+[[https://www.schtserv.com|Schthack]]
 
 ===== Sylverant =====
 

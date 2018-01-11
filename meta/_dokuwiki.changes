@@ -18,3 +18,7 @@
 1513827897	99.57.175.76	E	client:assets:area_mappings	lemon	specified what file it loads		12
 1515368530	74.83.65.238	E	format:bin	lemon	Redid entire instruction set description; adding pointers to functions and removing false instructions. Also added further explanation on how the client reads opcodes.		7526
 1515374845	74.83.65.238	e	format:bin	lemon	Named unknownF8CB set_slot_targetable		8
+1515602725	24.125.82.192	E	projects:servers:overview	tormentium	[SchtServ] 		38
+1515621968	74.83.65.238	E	format:bin	lemon	updated table of argument explanations		119
+1515622791	74.83.65.238	e	format:bin	lemon	The opcode table is at 9CCC00 not CCC900		0
+1515632568	74.83.65.238	E	format:bin	lemon	Named 0A and 0B, renamed 09 from leti to mov32, renamed 08 from let to mov.		5

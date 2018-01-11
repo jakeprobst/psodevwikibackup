@@ -360,3 +360,5 @@ wilds
 reads
 loads
 calls
+mov32
+mov16
