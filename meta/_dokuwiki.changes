@@ -1,10 +1,3 @@
-1496515441	67.161.8.229	E	net:message_flow	gatchi	fixed patch order, clarified when data connection happens		170
-1496781425	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		47
-1497918709	99.57.175.76	e	format:bin	lemonilla	named F883 so people have an idea what it does		5
-1497970840	50.224.10.154	e	format:bin	lemonilla	s or S key is a string		9
-1498259637	99.57.175.76	E	client	lemonilla	added register pointer		45
-1500305905	50.224.10.154	E	client:assets:area_mappings	lemonilla	Added Ep1 Data.  I'll fill in map variants when I get home and have those in front of me.		868
-1503512782	127.0.0.1	E	playground:playground		external edit		25
 1510632869	74.83.65.238	E	format:bin	lemonilla	[Parameter Types and Modifiers] 		119
 1510632940	74.83.65.238	E	format:bin	lemonilla	[Parameter Types and Modifiers] 		2
 1510673762	205.133.161.71	E	playground:playground	lemonilla			530
@@ -20,3 +13,8 @@
 1515632568	74.83.65.238	E	format:bin	lemon	Named 0A and 0B, renamed 09 from leti to mov32, renamed 08 from let to mov.		5
 1515707463	205.133.163.167	E	format:bin	lemon	named UnknownEA modi.  modi R1,dword:: R1 = R1%dword		-5
 1515711710	205.133.163.167	E	format:bin	lemon	named F80B display_minimap and F80C hide_minimap		5
+1515776212	74.83.65.238	e	format:bin	lemon	changed mov back to leti for consistency		-12
+1515776561	74.83.65.238	E	format:bin	lemon	named 0C, 0D, 4C, 4D 		21
+1515780568	74.83.65.238	E	format:bin	lemon			2
+1515782081	74.83.65.238	E	format:bin	lemon			1
+1515782153	74.83.65.238	E	format:bin	lemon			0

@@ -362,3 +362,5 @@ loads
 calls
 mov32
 mov16
+leti8
+label
