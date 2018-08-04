@@ -18,3 +18,4 @@
 1515782153	74.83.65.238	E	format:bin	lemon			0
 1516305193	206.21.170.181	E	format:bin	lemon	renamed stuff with regAddr and labelOffset to better fit the language		-14
 1525093356	188.117.4.158	E	format:dat	escu	Filled in missing info about wave structs		462
+1533329480	50.224.10.154	e	format:bin	lemon	opcode 0xDE takes R1 where R1 is the start of a register array of length 6.		0
