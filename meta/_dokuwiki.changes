@@ -18,3 +18,5 @@
 1525093356	188.117.4.158	E	format:dat	escu	Filled in missing info about wave structs		462
 1533329480	50.224.10.154	e	format:bin	lemon	opcode 0xDE takes R1 where R1 is the start of a register array of length 6.		0
 1533699978	99.57.175.76	e	format:bin	lemon	Confirmed F829 and F82A's Input param		0
+1534295603	99.57.175.76	E	format:bin	lemon	F87E sets R1 to Zero		-3
+1534295620	99.57.175.76	E	format:bin	lemon			-3
