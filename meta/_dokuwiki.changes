@@ -1,5 +1,3 @@
-1510685076	198.30.60.35	E	client:assets:area_mappings	lemonilla	Added ep4		528
-1510685173	198.30.60.35	e	client:assets:area_mappings	lemonilla	[Episode 1] 		10
 1513827897	99.57.175.76	E	client:assets:area_mappings	lemon	specified what file it loads		12
 1515368530	74.83.65.238	E	format:bin	lemon	Redid entire instruction set description; adding pointers to functions and removing false instructions. Also added further explanation on how the client reads opcodes.		7526
 1515374845	74.83.65.238	e	format:bin	lemon	Named unknownF8CB set_slot_targetable		8
@@ -20,3 +18,6 @@
 1533699978	99.57.175.76	e	format:bin	lemon	Confirmed F829 and F82A's Input param		0
 1534295603	99.57.175.76	E	format:bin	lemon	F87E sets R1 to Zero		-3
 1534295620	99.57.175.76	E	format:bin	lemon			-3
+1534338336	50.224.10.154	E	client	lemon			2424
+1534338380	50.224.10.154	R	client	lemon	old revision restored (2017/06/23 19:13)	1498259637	-2424
+1534375296	99.57.175.76	E	client:assets:area_mappings	lemon	Added hex values to map ID		285

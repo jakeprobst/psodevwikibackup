@@ -277,3 +277,12 @@ etc
 199
 2nd
 mov
+edi
+ecx
+str
+ptr
+pmt
+atp
+ata
+def
+evp

@@ -33,3 +33,8 @@ verification
 sequentially
 explanations
 ninjaflags32
+getplayerptr
+getclassname
+weaponoffset
+controlflags
+invinciblity

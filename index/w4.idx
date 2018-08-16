@@ -632,3 +632,11 @@ bbbb
 cccc
 pink
 mov8
+bool
+0100
+0200
+bank
+f80e
+stat
+cast
+fers
