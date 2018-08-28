@@ -18,3 +18,4 @@
 1534338380	50.224.10.154	R	client	lemon	old revision restored (2017/06/23 19:13)	1498259637	-2424
 1534375296	99.57.175.76	E	client:assets:area_mappings	lemon	Added hex values to map ID		285
 1535048261	188.117.4.158	e	client:assets:area_mappings	escu	typo		0
+1535377280	50.224.10.154	e	format:bin	lemon	specified table to represent BB and not all versions.		130
