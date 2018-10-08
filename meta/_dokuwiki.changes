@@ -1,5 +1,3 @@
-1515622791	74.83.65.238	e	format:bin	lemon	The opcode table is at 9CCC00 not CCC900		0
-1515632568	74.83.65.238	E	format:bin	lemon	Named 0A and 0B, renamed 09 from leti to mov32, renamed 08 from let to mov.		5
 1515707463	205.133.163.167	E	format:bin	lemon	named UnknownEA modi.  modi R1,dword:: R1 = R1%dword		-5
 1515711710	205.133.163.167	E	format:bin	lemon	named F80B display_minimap and F80C hide_minimap		5
 1515776212	74.83.65.238	e	format:bin	lemon	changed mov back to leti for consistency		-12
