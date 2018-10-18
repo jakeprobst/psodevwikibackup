@@ -18,3 +18,5 @@
 1535377280	50.224.10.154	e	format:bin	lemon	specified table to represent BB and not all versions.		130
 1538611947	99.57.175.76	E	format:bin	lemon	Removed nop opcodes in BB that use to be opcodes in other versions		-1115
 1538611999	99.57.175.76	e	format:bin	lemon	[Instructions] 		63
+1539829936	99.57.175.76	E	format:bin	lemon			14
+1539832782	99.57.175.76	E	format:bin	lemon			-26
