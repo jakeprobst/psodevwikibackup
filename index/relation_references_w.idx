@@ -61,3 +61,5 @@ format:shops_rel:tool
 format:shops_rel:weapon
 format:nj:njcm_model
 format:nj:xj_model
+format:unitxt
+client-asset:unitxt_j.prs

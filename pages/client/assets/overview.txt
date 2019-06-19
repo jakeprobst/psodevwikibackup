@@ -16,3 +16,4 @@
 | data/scene/map_*s.xj | Skybox geometry (too?) |
 | data/scene/map_*s.xvm | Skybox texture |
 | data/scene/map_*t.rel | |
+| [[client-asset:unitxt_j.prs|data/unitxt_j.prs]] | Main i18n file |

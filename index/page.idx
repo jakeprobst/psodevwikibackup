@@ -43,3 +43,5 @@ format:shops_rel:weapon
 playground:playground
 format:nj:xj_model
 format:nj:njcm_model
+format:unitxt
+client-asset:unitxt_j.prs

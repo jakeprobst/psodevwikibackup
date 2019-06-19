@@ -8,9 +8,11 @@
 |[[format:gsl|GSL]]|.gsl|Archive format|
 |[[format:nj|Ninja]]|.nj, .xj|Model geometry|
 |Ninja Motion|.njm|Model animation data|
+|PRS|.prs|PRS compressed file.|
 |[[format:qst|QST]]|.qst|Quest container format, contains a complete quest (DAT and BIN)|
 |[[format:rel|REL]]|.rel|Generic format|
 |TAM|.tam| |
+|[[format:unitxt|Unitxt]]| | I18n text, usually PRS compressed. |
 |XVM|.xvm|Archive format containing XVR textures.|
 
 \\
