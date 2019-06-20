@@ -6,6 +6,7 @@
 |[[format:bml|BML]]|.bml|Archive format for [[compression:prs|PRS]] compressed files.|
 |[[format:dat|DAT]]|.dat|Quest map objects, spawns, waves|
 |[[format:gsl|GSL]]|.gsl|Archive format|
+|[[format:ItemPMT|ItemPMT]]|.bin|Item stats table|
 |[[format:nj|Ninja]]|.nj, .xj|Model geometry|
 |Ninja Motion|.njm|Model animation data|
 |PRS|.prs|PRS compressed file.|

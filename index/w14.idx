@@ -4,3 +4,6 @@ implementation
 transformation
 itemnameoffset
 itemdescoffset
+starvaluetable
+statboosttable
+techboosttable

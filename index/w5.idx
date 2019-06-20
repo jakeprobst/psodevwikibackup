@@ -372,3 +372,16 @@ mutex
 walls
 traps
 maybe
+stats
+lowhp
+stat1
+stat2
+tech1
+tech2
+tech3
+minus
+units
+sales
+boost
+0x13a
+mates
