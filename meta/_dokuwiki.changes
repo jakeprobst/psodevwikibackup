@@ -1,4 +1,3 @@
-1534338336	50.224.10.154	E	client	lemon			2424
 1534338380	50.224.10.154	R	client	lemon	old revision restored (2017/06/23 19:13)	1498259637	-2424
 1534375296	99.57.175.76	E	client:assets:area_mappings	lemon	Added hex values to map ID		285
 1535048261	188.117.4.158	e	client:assets:area_mappings	escu	typo		0
@@ -18,3 +17,6 @@
 1560936776	84.195.199.159	E	format:overview	wilhuf			51
 1560936841	84.195.199.159	C	format:itempmt	wilhuf	created		9476
 1560938409	84.195.199.159	E	format:itempmt	wilhuf			30
+1561057358	84.195.199.159	E	format:itempmt	wilhuf	Nicer formatting and precise types.		-71
+1561063564	84.195.199.159	E	format:itempmt	wilhuf	More format details and full contents of standard ItemPMT.bin.		19209
+1561065983	84.195.199.159	E	start	wilhuf	[Other Documentation] 		184

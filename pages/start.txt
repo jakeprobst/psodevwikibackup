@@ -23,3 +23,5 @@ Backups of this wiki will be made daily and pushed to this public Git repository
   * https://sylverant.net/wiki/index.php/Main_Page
   * http://qedit.info/index.php?title=Main_Page
   * Sega Katana Documentation
+    * [[https://drive.google.com/open?id=0B8ckelEr16WGSGxMOFZHdmZWQlk|Ninja Library Specification]]
+    * [[https://drive.google.com/open?id=0B8ckelEr16WGd0d6YjNod3g3RWs|Ninja Guide]]
