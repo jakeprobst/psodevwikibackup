@@ -64,3 +64,5 @@ format:nj:xj_model
 format:unitxt
 client-asset:unitxt_j.prs
 format:itempmt
+format:prc
+format:rlc

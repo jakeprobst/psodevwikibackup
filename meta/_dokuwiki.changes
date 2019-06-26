@@ -1,7 +1,3 @@
-1535377280	50.224.10.154	e	format:bin	lemon	specified table to represent BB and not all versions.		130
-1538611947	99.57.175.76	E	format:bin	lemon	Removed nop opcodes in BB that use to be opcodes in other versions		-1115
-1538611999	99.57.175.76	e	format:bin	lemon	[Instructions] 		63
-1539829936	99.57.175.76	E	format:bin	lemon			14
 1539832782	99.57.175.76	E	format:bin	lemon			-26
 1553404366	186.177.146.154	E	format:shops_rel:tool	soly			-25
 1560888186	84.195.199.159	E	client:assets:overview	wilhuf			38
@@ -18,3 +14,7 @@
 1561063564	84.195.199.159	E	format:itempmt	wilhuf	More format details and full contents of standard ItemPMT.bin.		19209
 1561065983	84.195.199.159	E	start	wilhuf	[Other Documentation] 		184
 1561146122	84.195.199.159	e	client-asset:unitxt_j.prs	wilhuf	Added link to file format page.		43
+1561493535	84.195.199.159	E	format:overview	wilhuf			114
+1561494008	84.195.199.159	C	format:rlc	wilhuf	created		617
+1561494134	84.195.199.159	e	format:rlc	wilhuf			2
+1561494165	84.195.199.159	e	format:rlc	wilhuf			1
