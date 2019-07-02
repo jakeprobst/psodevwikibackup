@@ -18,3 +18,11 @@
 1561494008	84.195.199.159	C	format:rlc	wilhuf	created		617
 1561494134	84.195.199.159	e	format:rlc	wilhuf			2
 1561494165	84.195.199.159	e	format:rlc	wilhuf			1
+1562036151	183.76.30.135	E	format:nj:njcm_model	kion	[NJCM Model] 		39
+1562038785	183.76.30.135	C	kion_nj	kion	created		2975
+1562038873	183.76.30.135	E	kion_nj	kion	added njcm model		417
+1562038919	183.76.30.135	E	kion_nj	kion	chunk explanation added		805
+1562038941	183.76.30.135	E	kion_nj	kion	[Interchange File Format] 		7
+1562038963	183.76.30.135	E	kion_nj	kion	[Ninja File Format (.nj)] 		-24
+1562039112	183.76.30.135	E	kion_nj	kion			225
+1562039157	183.76.30.135	E	kion_nj	kion	[Bits Chunk] 		1095
