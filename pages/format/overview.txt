@@ -1,5 +1,36 @@
 ====== Overview of File Formats ======
 
+Phantasy Star Online started on the Dreamcast and was subsequently ported to the Gamecube for Episodes 1&2. The Gamecube version of Episode 1&2 was later ported to the Xbox. The Xbox version was then used as the base for PsoBB.
+
+Rel files (.rel) are a container format, that include a table of pointers to groups of assets included as structures which are shared with other formats without headers or footers. As such, while the general format is the same in most cases, having a pointer to the list of assets located at EOF -16, each use case of the rel format has a specific set of structs for its indented implementation and these implementations are described in their own respective pages.
+
+====== Dreamcast File Formats ======
+
+^Format^Extension^Description|
+| [[dreamcast:afs|AFS Archive]] | .afs | Stores a list of files  |
+| [[dreamcast:bml|BML Archive]] | .bml | Stores a list of files related to a given asset |
+| [[dreamcast:gsl|GSL Archive]] | .gsl | Archive format for storing a group of assets for a scene |
+| [[dreamcast:nj|Ninja Model]] | .nj | Model geometry using the Katana SDK Chunk Model Format |
+| Ninja Asset | .rel | Model geometry with included animation |
+| Ninja Motion| .njm | Model animation data |
+| PRC Encryption | .pr2 | PRC encryption |
+| PRS Compression | .prs | LZ77 based compression |
+| PVM | .pvm | Archive format containing PVR textures|
+| PVR | .pvr | Power VR native texture format for the Dremacast|
+| Stage Geometry | d.rel,n.rel | Model data for the stage geometry using the Chunk Model Format |
+| Stage Collision | c.rel | Collision hull for the stages used by defining a raw list of triangles |
+| Stage MiniMap | r.rel | The minimap for a stage that get's displayed in the game HUD |
+
+====== Gamecube File Formats ======
+
+^Format^Extension^Description|
+| Ninja Model | .gj | Model geometry using Gamecube adapted version of .nj |
+| GVM | .pvm | Archive format containing GVR textures|
+| GVR | .pvr | Texture format for the Gamecube |
+| Stage Geometry | d.rel,n.rel | Model data for the stage geometry using the GC Chunk Model Format |
+
+====== PsoBB File Formats ======
+
 ^Format^Extension^Description|
 |[[format:afs|AFS]]|.afs|Archive format. In PSOBB, it stores XJ or XVM files (usually compressed with PRS).|
 |[[format:bin|BIN]]|.bin|Quest metadata and object code|
@@ -18,5 +49,4 @@
 |[[format:unitxt|Unitxt]]| | I18n text, usually PRS compressed. |
 |XVM|.xvm|Archive format containing XVR textures.|
 
-\\
 
