@@ -12,7 +12,7 @@ Rel files (.rel) are a container format, that include a table of pointers to gro
 | [[dreamcast:gsl|GSL Archive]] | .gsl | Archive format for storing a group of assets for a scene |
 | [[dreamcast:nj|Ninja Model]] | .nj | Model geometry using the Katana SDK Chunk Model Format |
 | Ninja Asset | .rel | Model geometry with included animation |
-| Ninja Motion| .njm | Model animation data |
+| [[dreamcast:njm|Ninja Motion]] | .njm | Model animation data |
 | PRC Encryption | .pr2 | PRC encryption |
 | PRS Compression | .prs | LZ77 based compression |
 | PVM | .pvm | Archive format containing PVR textures|
