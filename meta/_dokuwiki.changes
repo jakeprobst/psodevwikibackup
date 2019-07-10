@@ -1,27 +1,3 @@
-1562036151	183.76.30.135	E	format:nj:njcm_model	kion	[NJCM Model] 		39
-1562038785	183.76.30.135	C	kion_nj	kion	created		2975
-1562038873	183.76.30.135	E	kion_nj	kion	added njcm model		417
-1562038919	183.76.30.135	E	kion_nj	kion	chunk explanation added		805
-1562038941	183.76.30.135	E	kion_nj	kion	[Interchange File Format] 		7
-1562038963	183.76.30.135	E	kion_nj	kion	[Ninja File Format (.nj)] 		-24
-1562039112	183.76.30.135	E	kion_nj	kion			225
-1562039157	183.76.30.135	E	kion_nj	kion	[Bits Chunk] 		1095
-1562042401	183.76.30.135	E	format:nj:njcm_model	kion	[Bits Chunk] 		395
-1562042461	183.76.30.135	E	kion_nj	kion	[Bits Chunk] 		394
-1562042553	183.76.30.135	E	kion_nj	kion	[Tiny Chunk] 		212
-1562042591	183.76.30.135	E	format:nj:njcm_model	kion	[Bits Chunk] 		0
-1562042888	183.76.30.135	E	kion_nj	kion	[Tiny Chunk] 		368
-1562043218	183.76.30.135	E	kion_nj	kion	[Tiny Chunk] 		301
-1562043464	183.76.30.135	E	kion_nj	kion	[Material Chunk] 		385
-1562043738	183.76.30.135	E	kion_nj	kion	[Material Chunk] 		329
-1562043779	183.76.30.135	E	kion_nj	kion	[Material Chunk] 		69
-1562043846	183.76.30.135	E	kion_nj	kion	[Material Chunk] 		155
-1562044849	183.76.30.135	E	kion_nj	kion	[Vertex Chunk] 		1811
-1562045316	183.76.30.135	E	kion_nj	kion	[Vertex Chunk] 		821
-1562046256	183.76.30.135	E	kion_nj	kion	[Strip Chunk] 		1953
-1562047021	183.76.30.135	E	kion_nj	kion	[Strip Chunk] 		1569
-1562047062	183.76.30.135	E	format:nj	kion	kion edit		9427
-1562066479	84.195.199.159	E	format:nj	wilhuf	Added information about .xj and fixed titles.		283
 1562066660	84.195.199.159	D	format:nj:njcm_model	wilhuf	removed		-4403
 1562066825	84.195.199.159	e	format:nj	wilhuf			4
 1562128379	183.76.30.135	E	format:overview	kion			805
