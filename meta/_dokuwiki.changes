@@ -1,23 +1,3 @@
-1562066660	84.195.199.159	D	format:nj:njcm_model	wilhuf	removed		-4403
-1562066825	84.195.199.159	e	format:nj	wilhuf			4
-1562128379	183.76.30.135	E	format:overview	kion			805
-1562133004	183.76.30.135	E	format:overview	kion	Separate out formats by platform		1239
-1562133089	183.76.30.135	C	dc_nj	kion	created		13957
-1562133394	183.76.30.135	E	format:overview	kion	[Dreamcast File Formats] 		17
-1562133490	183.76.30.135	E	format:overview	kion	[Dreamcast File Formats] 		-7
-1562133685	183.76.30.135	D	dc_nj	kion	removed		-13957
-1562133709	183.76.30.135	D	kion_nj	kion	removed		-13867
-1562133744	183.76.30.135	E	format:overview	kion			7
-1562133799	183.76.30.135	C	dreamcast:nj	kion	created		13997
-1562133812	183.76.30.135	E	dreamcast:nj	kion	[Ninja File Format (.nj, .xj)] 		-11
-1562134000	183.76.30.135	E	format:overview	kion	[Dreamcast File Formats] 		18
-1562135002	183.76.30.135	C	dreamcast:afs	kion	created		697
-1562135819	183.76.30.135	E	dreamcast:afs	kion			84
-1562135855	183.76.30.135	E	dreamcast:afs	kion	[Interchange File Format] 		-1
-1562136486	183.76.30.135	E	dreamcast:afs	kion	[Interchange File Format] 		927
-1562137486	183.76.30.135	E	dreamcast:afs	kion			892
-1562137528	183.76.30.135	E	dreamcast:afs	kion	[Example Implementation] 		-1
-1562138762	183.76.30.135	E	format:overview	kion	[Dreamcast File Formats] 		18
 1562140770	183.76.30.135	C	dreamcast:bml	kion	created		3868
 1562140797	183.76.30.135	E	dreamcast:bml	kion	[File Table] 		0
 1562140834	183.76.30.135	E	dreamcast:bml	kion	[File Table] 		0
