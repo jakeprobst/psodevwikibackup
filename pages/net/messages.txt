@@ -993,11 +993,17 @@ Note: this command is used by PSOBB
 
 
 E0 - begin loading game / account data (client->server) (BB)
+
 E2 - keyboard / gamepad config (server->client) (BB)
+
 E2 - tournament setup (client->server) (GC3)
+
 E3 - char preview request (client->server) (BB)
+
 E4 - select character / char not present (bidirectional) (BB)
+
 E5 - player preview / create new character (bidirectional) (BB)
+
 E6 - security data / guild card number (server->client) (BB)
 
 

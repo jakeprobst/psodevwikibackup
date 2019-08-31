@@ -1,4 +1,3 @@
-1562207035	183.76.30.135	E	dreamcast:bml	kion	[Example Implementation] 		1604
 1562207115	183.76.30.135	E	dreamcast:afs	kion	[Example Implementation] 		26
 1562207131	183.76.30.135	E	dreamcast:afs	kion	[Example Implementation] 		-35
 1562207144	183.76.30.135	E	dreamcast:bml	kion	[Example Implementation] 		-9
@@ -18,3 +17,4 @@
 1563289224	84.195.199.159	e	format:nj:xj_model	wilhuf	[Triangle Strip List] 		0
 1563289398	84.195.199.159	E	format:nj:xj_model	wilhuf	Corrected c types.		54
 1563289480	84.195.199.159	e	format:nj:xj_model	wilhuf			-2
+1567208824	134.41.82.163	E	net:messages	andy	formatting of BB En packets		6
