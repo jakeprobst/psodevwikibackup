@@ -73,3 +73,8 @@ dreamcast:prs
 dreamcast:bml
 dreamcast:gsl
 dreamcast:njm
+format:fpb
+format:nbl
+format:uvr
+format:unj
+psp2i:nbl

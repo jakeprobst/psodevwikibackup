@@ -773,3 +773,16 @@ deform
 0x8000
 angles
 depend
+insdir
+sysdir
+usrdir
+module
+illust
+pieces
+strict
+mapped
+filled
+locate
+lastly
+gitlab
+dashgl

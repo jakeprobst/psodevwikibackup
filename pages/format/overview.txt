@@ -50,3 +50,10 @@ Rel files (.rel) are a container format, that include a table of pointers to gro
 |XVM|.xvm|Archive format containing XVR textures.|
 
 
+====== Psp2i File Formats ======
+
+^Format^Extension^Description|
+|[[format:fpb|FPB]]|.fpb|File system format. Stores all of the asset files on the UMD iso|
+|[[format:nbl|NMLL]]|.nbl|Archive Format "new bml", uses blowfish implementation to store assets|
+|[[format:uvr|UVRT]]|.uvr|"universe" PowerVR Texture based on GVRT|
+|[[format:unj|NUOB]]|.unj|"universe" Ninja Model that uses direct buffer drawing|

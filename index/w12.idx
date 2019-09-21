@@ -48,3 +48,6 @@ relchunkver0
 specifically
 subsequently
 hierarchical
+readfilesync
+readuint32le
+confirmation
