@@ -24,9 +24,9 @@ Rel files (.rel) are a container format, that include a table of pointers to gro
 ====== Gamecube File Formats ======
 
 ^Format^Extension^Description|
-| Ninja Model | .gj | Model geometry using Gamecube adapted version of .nj |
-| GVM | .pvm | Archive format containing GVR textures|
-| GVR | .pvr | Texture format for the Gamecube |
+| [[format:gj|GC Ninja Model]] | .gj | Model geometry using Gamecube adapted version of .nj |
+| [[format:gvm|GC Texture Achive]] | .gvm | Archive format containing GVR textures|
+| [[format:gvr|GC Texture Format]] | .gvr | Texture format for the Gamecube |
 | Stage Geometry | d.rel,n.rel | Model data for the stage geometry using the GC Chunk Model Format |
 
 ====== PsoBB File Formats ======
