@@ -30,7 +30,8 @@
 
 ===== Client =====
 
-[[:client|Client]]
+[[:client|Client]]\\
+[[:client:quest_engine|Quest Engine]]
 
 ===== Projects =====
 
