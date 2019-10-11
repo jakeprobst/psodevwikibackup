@@ -18,3 +18,7 @@
 1570453885	50.224.10.154	E	client:quest_engine	lemon			0
 1570453909	50.224.10.154	E	client:quest_engine	lemon			2
 1570473399	188.127.197.98	E	client:quest_engine	escu	Corrected argument stack description		21
+1570707081	84.195.199.159	E	format:dat	wilhuf			64
+1570707099	84.195.199.159	e	format:dat	wilhuf	[Entity Table - Wave] 		2
+1570707149	84.195.199.159	e	format:dat	wilhuf	[Entity Table - Wave] 		6
+1570730027	188.127.197.98	E	client:quest_engine	escu	Added info about which storage types are global and which are thread local		186
