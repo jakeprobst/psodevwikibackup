@@ -1102,7 +1102,7 @@ The type (or command) of each packet is in parenthesis next to the name in each 
 ^ Field  ^ Length ^ Value ^
 | Header | 4 bytes | |
 | Patch ID | 4 bytes | ID corresponding to 0x0C |
-| Checksum | 4 bytes | MD5 checksum of the file |
+| Checksum | 4 bytes | CRC32 checksum of the file |
 | File Size | 4 bytes | Size of the file |
 
 ^  Client File List Done (0x1000)  ^^^
@@ -1126,9 +1126,9 @@ The type (or command) of each packet is in parenthesis next to the name in each 
 ^ Field  ^ Length ^ Value ^
 | Header | 4 bytes | |
 | Chunk Number | 4 bytes | |
-| Chunk Checksum | 4 bytes | MD5 checksum of the file |
+| Chunk Checksum | 4 bytes | CRC32 checksum of the file |
 | Data size | 4 bytes | |
-| Data | Maximum of 0x60000 bytes | Data of the file |
+| Data | Maximum of 0x6000 bytes | Data of the file |
 
 ^  File Complete (0x0800)   ^^^
 ^ Field  ^ Length ^ Value ^
