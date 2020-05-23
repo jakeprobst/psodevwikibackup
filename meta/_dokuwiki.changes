@@ -1,4 +1,3 @@
-1569380662	131.129.50.139	E	format:gj	kion			1207
 1570434777	217.30.178.123	C	client:quest_engine	escu	created		1930
 1570434974	217.30.178.123	E	sidebar	escu	Added quest engine link		40
 1570435722	217.30.178.123	E	client:quest_engine	escu	Added note about arg_pushs		439
@@ -18,3 +17,4 @@
 1576202342	183.76.53.135	E	format:overview	kion	[Dreamcast File Formats] 		-1
 1576203918	183.76.53.135	C	dreamcast:prs	kion	created		4649
 1576203934	183.76.53.135	E	dreamcast:prs	kion	[Prs Compression] 		-8
+1590177122	188.127.197.98	E	client:assets:area_mappings	escu	Fixed ep4 area mappings		51
