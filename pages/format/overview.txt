@@ -20,6 +20,7 @@ Rel files (.rel) are a container format, that include a table of pointers to gro
 | Stage Geometry | d.rel,n.rel | Model data for the stage geometry using the Chunk Model Format |
 | Stage Collision | c.rel | Collision hull for the stages used by defining a raw list of triangles |
 | Stage MiniMap | r.rel | The minimap for a stage that get's displayed in the game HUD |
+| [[dreamcast:stage_anims|Stage Animations]] | *.rel | State of animations working and not working |
 
 ====== Gamecube File Formats ======
 
