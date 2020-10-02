@@ -1,4 +1,3 @@
-1592274242	183.76.53.135	E	dreamcast:stage_anims	kion			-4
 1592362669	183.76.53.135	E	dreamcast:stage_anims	kion			698
 1597422209	111.239.153.47	E	format:overview	kion	[Dreamcast File Formats] 		52
 1597424298	111.239.153.47	C	dreamcast:pvm	kion	created		265
@@ -19,3 +18,4 @@
 1601321954	84.195.199.159	E	format:dat	wilhuf	[Entity Table - NPC] 		36
 1601322294	84.195.199.159	E	format:dat	wilhuf	[Entity Table - NPC] 		210
 1601482782	84.195.199.159	E	format:dat	wilhuf	[Entity Table - Object] 		331
+1601568394	84.195.199.159	E	format:nj:xj_model	wilhuf	[Vertex List] 		33
