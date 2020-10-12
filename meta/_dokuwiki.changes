@@ -18,3 +18,8 @@
 1601322294	84.195.199.159	E	format:dat	wilhuf	[Entity Table - NPC] 		210
 1601482782	84.195.199.159	E	format:dat	wilhuf	[Entity Table - Object] 		331
 1601568394	84.195.199.159	E	format:nj:xj_model	wilhuf	[Vertex List] 		33
+1602451402	209.6.98.81	E	format:dat	ender	Adding info about wave structures in .dat for EP1 CM		1768
+1602451759	209.6.98.81	E	format:dat	ender	[Entity Table - Wave] 		6
+1602462041	209.6.98.81	E	format:dat	ender	Adding info about dat_table_cm_spawn_t		66
+1602462103	209.6.98.81	E	format:dat	ender	[Entity Table - Challenge Mode Spawn Points] 		78
+1602462197	209.6.98.81	E	format:dat	ender	[Entity Table - Challenge Mode Spawn Points] 		28
