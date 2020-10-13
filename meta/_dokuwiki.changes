@@ -1,8 +1,3 @@
-1597422209	111.239.153.47	E	format:overview	kion	[Dreamcast File Formats] 		52
-1597424298	111.239.153.47	C	dreamcast:pvm	kion	created		265
-1597425380	111.239.153.47	E	dreamcast:pvm	kion			1263
-1597444776	111.239.153.47	E	dreamcast:pvm	kion	[PVM Content] 		311
-1597445133	111.239.153.47	E	dreamcast:pvm	kion	[PVM Content] 		110
 1597445680	111.239.153.47	E	dreamcast:pvm	kion	[PVM Content] 		627
 1597445734	111.239.153.47	E	dreamcast:pvm	kion			80
 1597445958	111.239.153.47	E	dreamcast:pvm	kion	[PVR Texture List] 		466
@@ -23,3 +18,5 @@
 1602462041	209.6.98.81	E	format:dat	ender	Adding info about dat_table_cm_spawn_t		66
 1602462103	209.6.98.81	E	format:dat	ender	[Entity Table - Challenge Mode Spawn Points] 		78
 1602462197	209.6.98.81	E	format:dat	ender	[Entity Table - Challenge Mode Spawn Points] 		28
+1602533962	209.6.98.81	E	format:dat	ender	[Entity Table - Object] 		210
+1602560303	209.6.98.81	e	format:dat	ender	[Entity Table - Challenge Mode Spawn Points] 		179
