@@ -32,3 +32,8 @@
     - Server sends 2E8 - checksum response
     - Client sends 3E8 - 
   - Client connects to game server
+
+===== Flowcharts =====
+----
+==== Patch service ====
+{{gdraw>1_mKhclebeYqRacHa3OnsqOiaFHN1ppFAke376M9X4bk width=200 title="Patch service message flowchart" center}}

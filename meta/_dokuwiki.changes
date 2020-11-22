@@ -18,3 +18,6 @@
 1602630956	209.6.98.81	E	format:dat	ender	Renaming some fields and fixing byte order for constant values		373
 1602631410	209.6.98.81	E	client:quest_engine	ender	Adding note about va_start/va_end saving registers to the same Variable Stack as stack_push/pop.		246
 1603449310	188.127.197.98	E	format:qst	escu	[Message] 		26
+1606002279	173.54.250.213	E	net:messages	truevision	added patch service message flow chart		181
+1606003585	173.54.250.213	E	net:message_flow	truevision	added patch service message flow chart		165
+1606003738	173.54.250.213	E	net:messages	truevision	removed flowchart section		-181

@@ -41,3 +41,5 @@
 1496781425	67.161.8.229	e	net:messages	gatchi	[03 - Initialize Encryption and Check License] 		47
 1567208824	134.41.82.163	E	net:messages	andy	formatting of BB En packets		6
 1574557356	71.187.254.99	e	net:messages	truevision	corrected checksum type and chunk maximum length		3
+1606002279	173.54.250.213	E	net:messages	truevision	added patch service message flow chart		181
+1606003738	173.54.250.213	E	net:messages	truevision	removed flowchart section		-181
